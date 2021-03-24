@@ -1,3 +1,7 @@
+html {
+    min-height: 100%;
+    position: relative;
+}
 body {
     height: 100%;
     margin: 0;
@@ -14,10 +18,20 @@ header img {
     background-size: cover;
 }
 
+
+
+footer {
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    position: absolute;
+}
+
 footer img {
     width: 100%;
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
 }
+
   
