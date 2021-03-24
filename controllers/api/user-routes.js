@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { User, Session } = require('../../models')
+const { User, Session, Benchmark } = require('../../models')
 
 // get users
 router.get('/', (req, res) => {
@@ -24,6 +24,10 @@ router.get('/:id', (req, res) => {
             {
                 model: Session,
                 attributes: ['id', 'date', 'category', 'time', 'level', 'description']
+            },
+            {
+                model: Benchmark,
+                attributes: ['id', 'boulder_grade', 'route_grade']
             }
         ]
     })

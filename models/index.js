@@ -7,6 +7,15 @@ User.hasMany(Session, {
 });
 
 Session.belongsTo(User, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+})
+
+User.hasOne(Benchmark, {
+    foreignKey: 'user_id'
+})
+
+Benchmark.belongsTo(User, {
     foreignKey: 'user_id'
 })
 
