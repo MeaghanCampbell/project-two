@@ -2,6 +2,7 @@ html {
     min-height: 100%;
     position: relative;
 }
+
 body {
     height: 100%;
     margin: 0;
@@ -9,6 +10,7 @@ body {
     background: radial-gradient(#333333, #000000);
     background-attachment: fixed;
     background-repeat: no-repeat;
+    font-family: 'Montserrat', sans-serif;
 }
 
 header img {
@@ -18,7 +20,27 @@ header img {
     background-size: cover;
 }
 
+main {
+    width: 80%;
+    margin: auto;
+    color: #ffffff;
+    text-align: center;
+}
 
+h6 {
+    border-bottom: none;
+}
+
+input {
+    text-align: center;
+    border-radius: 8px;
+    color: #333333;
+    background-color: #000000;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 7px;
+    border: 1px solid #23A349
+}
 
 footer {
     left: 0;
@@ -33,5 +55,3 @@ footer img {
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-  
