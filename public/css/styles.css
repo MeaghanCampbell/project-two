@@ -13,6 +13,8 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+/* Login & Sign In Specifics */
+
 header img {
     width: 100%;
     background-position: center top;
@@ -31,20 +33,6 @@ em {
 
 h6 {
     font-weight: 400;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    background: linear-gradient(#23A349, #97C671);
-    color: #ffffff;
-    margin: 20px;
-    padding: 15px;
-    border-radius: 3px;
-}
-
-.fa-lg:hover {
-    color: #cccccc;
 }
 
 main {
@@ -74,6 +62,37 @@ input:hover {
     color: #ffffff;
 }
 
+footer {
+    display: flex;
+    justify-content: end;
+    bottom: 0;
+    position: absolute;
+}
+
+footer img {
+    width: 100%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: none;
+}
+
+/* Homescreen Specifics */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(#23A349, #97C671);
+    color: #ffffff;
+    margin: 20px;
+    padding: 15px;
+    border-radius: 3px;
+}
+
+.fa-lg:hover {
+    color: #cccccc;
+}
+
 section {
     font-size: 12px;
     font-weight: 600;
@@ -84,8 +103,7 @@ section {
 .section-header {
     background-color: #ffffff;
     color: #000000;
-    padding-left: 7px;
-    padding-right: 7px;
+    padding: 0 7px;
 }
 
 .section-header-content {
@@ -106,6 +124,8 @@ section {
     background: linear-gradient(#97C671,#23A349);
     text-shadow: 3px, 3px #000000;
 }
+
+/* Session View Specifics */
 
 .session-content {
     text-align: center;
@@ -129,9 +149,10 @@ section {
 }
 
 .save-icon {
-    padding-right: 4px;
-    padding-top: 1px;
+    padding: 1px 4px 0 0;
 }
+
+/* Search Page Specifics */
 
 .search-input-container {
     display: flex;
@@ -142,22 +163,65 @@ section {
 .search-input {
     display: flex;
     align-self: center;
-    min-width: 90%;
+    min-width: 100%;
     margin-bottom: 30px;
     align-self: center;
-    /* margin-left: 5px; */
 }
 
-footer {
-    left: 0;
-    bottom: 0;
-    overflow: hidden;
-    position: absolute;
+/* User Dashboard Specifics */
+
+.dashboard-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-footer img {
-    width: 100%;
-    background-position: center bottom;
-    background-repeat: no-repeat;
-    background-size: cover;
+button {
+    -webkit-appearance: none;
+    color: #ffffff;
+    background: linear-gradient(#97C671,#23A349);
+    border-radius: 5px;
+    border: 2px solid #ffffff;
+    outline: none;
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 600;
+    margin: 0 1px;
+}
+
+button:hover {
+    background: linear-gradient(#23A349, #97C671);
+}
+
+h3 {
+    border-bottom: 1px solid #ffffff;
+    padding-bottom: 5px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.benchmark-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.benchmark-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(to right,#23A349, #97C671);
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin: 0 10px;   
+}
+
+.section-header-dashboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 30px;
 }
