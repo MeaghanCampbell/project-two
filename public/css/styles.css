@@ -43,6 +43,10 @@ nav {
     border-radius: 3px;
 }
 
+.fa-lg:hover {
+    color: #cccccc;
+}
+
 main {
     width: 80%;
     margin: auto;
@@ -129,17 +133,19 @@ section {
     padding-top: 1px;
 }
 
-.search-section-content {
+.search-input-container {
     display: flex;
-    align-items: center;
     justify-content: center;
-    min-height: 50px;
+    align-items: center;
 }
 
 .search-input {
+    display: flex;
+    align-self: center;
     min-width: 90%;
-    margin-bottom: 27px;
-    margin-left: 5px;
+    margin-bottom: 30px;
+    align-self: center;
+    /* margin-left: 5px; */
 }
 
 footer {
