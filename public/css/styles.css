@@ -2,6 +2,7 @@ html {
     min-height: 100%;
     position: relative;
 }
+
 body {
     height: 100%;
     margin: 0;
@@ -9,6 +10,7 @@ body {
     background: radial-gradient(#333333, #000000);
     background-attachment: fixed;
     background-repeat: no-repeat;
+    font-family: 'Montserrat', sans-serif;
 }
 
 header img {
@@ -18,7 +20,127 @@ header img {
     background-size: cover;
 }
 
+h1 {
+    letter-spacing: 3px;
+    font-weight: 500;
+}
 
+em {
+    letter-spacing: normal;
+}
+
+h6 {
+    font-weight: 400;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(#23A349, #97C671);
+    color: #ffffff;
+    margin: 20px;
+    padding: 15px;
+    border-radius: 3px;
+}
+
+main {
+    width: 80%;
+    margin: auto;
+    color: #ffffff;
+}
+
+.login-main {
+    text-align: center;
+}
+
+input {
+    text-align: center;
+    border-radius: 8px;
+    color: #333333;
+    background-color: #000000;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 7px;
+    border: 1px solid #23A349;
+    outline: none;
+}
+
+input:hover {
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+section {
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid #ffffff;
+    margin-bottom: 20px;
+}
+
+.section-header {
+    background-color: #ffffff;
+    color: #000000;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+.section-header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-height: 30px;
+}
+
+.section-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+}
+
+.section-body:hover {
+    background: linear-gradient(#97C671,#23A349);
+    text-shadow: 3px, 3px #000000;
+}
+
+.session-content {
+    text-align: center;
+}
+
+.session-span {
+    font-weight: 300;
+}
+
+.save-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 35px;
+    background: linear-gradient(#97C671,#23A349);
+    font-size: 15px;
+}
+
+.save-banner:hover {
+    background: linear-gradient(#23A349, #97C671);
+}
+
+.save-icon {
+    padding-right: 4px;
+    padding-top: 1px;
+}
+
+.search-section-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+}
+
+.search-input {
+    min-width: 90%;
+    margin-bottom: 27px;
+    margin-left: 5px;
+}
 
 footer {
     left: 0;
@@ -33,5 +155,3 @@ footer img {
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-  
