@@ -31,7 +31,6 @@ em {
 
 h6 {
     font-weight: 400;
-    /* margin: none !important; */
 }
 
 nav {
@@ -97,13 +96,11 @@ section {
     align-items: center;
     justify-content: center;
     min-height: 50px;
-    /* text-shadow: 4px, 4px, 3px #333333; */
 }
 
 .section-body:hover {
     background: linear-gradient(#97C671,#23A349);
     text-shadow: 3px, 3px #000000;
-
 }
 
 .session-content {
@@ -130,6 +127,20 @@ section {
 .save-icon {
     padding-right: 4px;
     padding-top: 1px;
+}
+
+.search-section-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+}
+
+.search-input {
+    min-width: 90%;
+    align-self: center;
+    margin-bottom: 27px;
+    margin-left: 5px;
 }
 
 footer {
