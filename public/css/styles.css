@@ -97,16 +97,21 @@ section {
     align-items: center;
     justify-content: center;
     min-height: 50px;
-    /* text-shadow: 2px, 2px, 3px #333333; */
+    /* text-shadow: 4px, 4px, 3px #333333; */
 }
 
 .section-body:hover {
-    background: linear-gradient(#23A349, #97C671);
-    filter:drop-shadow: 2px, 2px, 3px #333333;
+    background: linear-gradient(#97C671,#23A349);
+    text-shadow: 3px, 3px #000000;
+
 }
 
-.hover-description:hover {
-    text-shadow: 12px, 12px, 3px #333333;
+.session-content {
+    text-align: center;
+}
+
+.session-span {
+    font-weight: 300;
 }
 
 footer {
