@@ -24,7 +24,8 @@ Benchmark.init(
             allowNull: false,
         },
         user_id: {
-            type: DataTypes.TEXT,
+            type: DataTypes.INTEGER,
+            unique: true,
             references: {
                 model: 'user',
                 key: 'id'

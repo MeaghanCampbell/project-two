@@ -11,24 +11,33 @@ Session.init(
             primaryKey: true,
             autoIncrement: true
         },
+        date: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        // type of workout
         category: {
             type: DataTypes.STRING,
             allowNull: false
         },
+        // time it took to complete workout (in minutes)
         time: {
             type: DataTypes.INTEGER,
             allowNull: false
         },
+        // beginner, intermediate or advanced
         level: {
             type: DataTypes.STRING,
             allowNull: false,
         },
+        // workout description
         description: {
             type: DataTypes.TEXT,
             allowNull: true
         },
+        // connect session to user
         user_id: {
-            type: DataTypes.TEXT,
+            type: DataTypes.INTEGER,
             references: {
                 model: 'user',
                 key: 'id'
