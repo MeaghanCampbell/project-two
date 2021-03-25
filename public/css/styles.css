@@ -114,6 +114,24 @@ section {
     font-weight: 300;
 }
 
+.save-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 35px;
+    background: linear-gradient(#97C671,#23A349);
+    font-size: 15px;
+}
+
+.save-banner:hover {
+    background: linear-gradient(#23A349, #97C671);
+}
+
+.save-icon {
+    padding-right: 4px;
+    padding-top: 1px;
+}
+
 footer {
     left: 0;
     bottom: 0;
