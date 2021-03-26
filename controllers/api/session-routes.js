@@ -70,6 +70,7 @@ router.post('/', (req, res) => {
 
 // route for updating posts with a like
 router.put('/like', (req, res) => {
+    console.log(req.body)
     Like.create({
         user_id: req.body.user_id,
         session_id: req.body.session_id
@@ -86,7 +87,8 @@ router.put('/like', (req, res) => {
             'level',
             'description',
             [
-              sequelize.literal('(SELECT COUNT(*) FROM like AS like_count WHERE session.id = like.session_id)')
+            sequelize.literal('(SELECT COUNT(*) FROM like WHERE like.session_id = ' + req.body.session_id  + ')'),
+            'like_count'
             ]
           ]
         })
