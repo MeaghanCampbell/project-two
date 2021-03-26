@@ -35,7 +35,15 @@ User.init(
             validate: {
                 len: [4]
             }
-        }
+        },
+        // followed_users: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: true,
+        //     references: {
+        //         model: 'follow',
+        //         key: 'id'
+        //     }
+        // }
     },
     {
         hooks: {

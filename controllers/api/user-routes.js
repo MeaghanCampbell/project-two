@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { User, Session, Benchmark } = require('../../models')
+const { User, Session, Benchmark, Follow } = require('../../models')
 
 // get users
 router.get('/', (req, res) => {
@@ -28,6 +28,10 @@ router.get('/:id', (req, res) => {
             {
                 model: Benchmark,
                 attributes: ['id', 'boulder_grade', 'route_grade']
+            },
+            {
+                model: Follow,
+                attributes: ['id', 'user_id']
             }
         ]
     })
@@ -82,6 +86,7 @@ router.post('/login', (req, res) => {
         res.json({ user: dbUserData, message: 'You are now logged in!' });
     })
 })
+
 
 // update a user
 router.put('/:id', (req, res) => {

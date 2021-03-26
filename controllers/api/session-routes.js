@@ -1,17 +1,26 @@
 const router = require('express').Router()
-const { Session, User } = require('../../models')
+const { Session, User, Kudos } = require('../../models')
+const sequelize = require('../../config/connection');
 
 // get all sessions
 router.get('/', (req, res) => {
     Session.findAll({
-      attributes: ['id', 'date', 'category', 'time', 'level', 'description'],
-      order: [['date', 'DESC']], 
-      include: [
+        attributes: [
+          'id',
+          'date',
+          'category',
+          'time',
+          'level',
+          'description',
+          [sequelize.literal('(SELECT COUNT(*) FROM kudos WHERE session.id = kudos.session_id)'), 'kudos_count']
+        ],
+        order: [['date', 'DESC']], 
+        include: [
           {
               model: User,
               attributes: ['username']
           }
-      ]
+        ]
     })
     .then(dbSessionData => res.json(dbSessionData))
     .catch(err => {
@@ -20,13 +29,22 @@ router.get('/', (req, res) => {
     })
 });
 
+
 // get one session by id
 router.get('/:id', (req, res) => {
     Session.findOne({
         where: {
             id: req.params.id
         },
-        attributes: ['id', 'date', 'category', 'time', 'level', 'description'],
+        attributes: [
+            'id',
+            'date',
+            'category',
+            'time',
+            'level',
+            'description',
+            [sequelize.literal('(SELECT COUNT(*) FROM kudos WHERE session.id = kudos.session_id)'), 'kudos_count']
+        ],
         include: [
             {
                 model: User,
@@ -47,6 +65,7 @@ router.get('/:id', (req, res) => {
     });
 })
 
+
 // post a new session
 router.post('/', (req, res) => {
     Session.create({
@@ -63,6 +82,40 @@ router.post('/', (req, res) => {
         res.status(500).json(err);
     });
 })
+
+
+// route for updating posts with a kudos
+router.put('/kudos', (req, res) => {
+    Kudos.create({
+        user_id: req.body.user_id,
+        session_id: req.body.session_id
+      }).then(() => {
+        // then find the post we just voted on
+        return Session.findOne({
+          where: {
+            id: req.body.session_id
+          },
+          attributes: [
+            'id',
+            'date',
+            'category',
+            'time',
+            'level',
+            'description',
+            [
+                sequelize.literal('(SELECT COUNT(*) FROM kudos WHERE session.id = kudos.session_id)'),
+                'kudos_count'
+            ]
+          ]
+        })
+        .then(dbSessionData => res.json(dbSessionData))
+        .catch(err => {
+          console.log(err);
+          res.status(400).json(err);
+        });
+    })
+})
+
 
 // update a session by id
 router.put('/:id', (req, res) => {
@@ -92,6 +145,7 @@ router.put('/:id', (req, res) => {
     });
 })
 
+
 // delete a session
 router.delete('/:id', (req, res) => {
     Session.destroy({
@@ -111,5 +165,6 @@ router.delete('/:id', (req, res) => {
         res.status(500).json(err);
     });
 })
+
 
 module.exports = router

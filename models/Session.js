@@ -42,7 +42,7 @@ Session.init(
                 model: 'user',
                 key: 'id'
             }
-        }
+        } 
     },
     {
         sequelize,
