@@ -36,10 +36,11 @@ User.init(
                 len: [4]
             }
         },
-        // follow_id: {
-        //     type: DataTypes.ENUM,
+        // followed_users: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: true,
         //     references: {
-        //         model: 'user',
+        //         model: 'follow',
         //         key: 'id'
         //     }
         // }

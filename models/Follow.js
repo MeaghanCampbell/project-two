@@ -11,16 +11,10 @@ Follow.init(
             primaryKey: true,
             autoIncrement: true
         },
-        followed_user_id: {
+        user_id: {
             type: DataTypes.INTEGER,
+            allowNull: false,
             references: {
-                model: 'user',
-                key: 'id'
-            }
-        },
-        loggedin_user_id: {
-            type: DataTypes.INTEGER,
-            references:{
                 model: 'user',
                 key: 'id'
             }

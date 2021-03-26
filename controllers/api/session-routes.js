@@ -5,14 +5,22 @@ const sequelize = require('../../config/connection');
 // get all sessions
 router.get('/', (req, res) => {
     Session.findAll({
-      attributes: ['id', 'date', 'category', 'time', 'level', 'description'],
-      order: [['date', 'DESC']], 
-      include: [
+        attributes: [
+          'id',
+          'date',
+          'category',
+          'time',
+          'level',
+          'description',
+          [sequelize.literal('(SELECT COUNT(*) FROM kudos WHERE session.id = kudos.session_id)'), 'kudos_count']
+        ],
+        order: [['date', 'DESC']], 
+        include: [
           {
               model: User,
               attributes: ['username']
           }
-      ]
+        ]
     })
     .then(dbSessionData => res.json(dbSessionData))
     .catch(err => {
@@ -28,7 +36,15 @@ router.get('/:id', (req, res) => {
         where: {
             id: req.params.id
         },
-        attributes: ['id', 'date', 'category', 'time', 'level', 'description'],
+        attributes: [
+            'id',
+            'date',
+            'category',
+            'time',
+            'level',
+            'description',
+            [sequelize.literal('(SELECT COUNT(*) FROM kudos WHERE session.id = kudos.session_id)'), 'kudos_count']
+        ],
         include: [
             {
                 model: User,
