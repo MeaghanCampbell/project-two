@@ -310,4 +310,17 @@ select {
     background: linear-gradient(#23A349, #97C671);
 }
 
+/* View Workout Specifics */
 
+.delete-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 35px;
+    background: linear-gradient(#c67171,#a32323);
+    font-size: 15px;
+}
+
+.delete-banner:hover {
+    background: linear-gradient(#a32323, #c67171);
+}
