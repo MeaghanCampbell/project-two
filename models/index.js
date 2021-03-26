@@ -2,7 +2,7 @@ const User = require('./User');
 const Session = require('./Session');
 const Benchmark = require('./Benchmark');
 const Follow = require('./Follow')
-const Like = require('./Like')
+const Kudos = require('./Kudos')
 
 User.hasMany(Session, {
     foreignKey: 'user_id'
@@ -22,30 +22,30 @@ Benchmark.belongsTo(User, {
 })
 
 User.belongsToMany(Session, {
-    through: Like,
-    as: 'liked_sessions',
+    through: Kudos,
+    as: 'kudos_sessions',
     foreignKey: 'user_id'
 })
 
 Session.belongsToMany(User, {
-    through: Like,
-    as: 'liked_sessions',
+    through: Kudos,
+    as: 'kudos_sessions',
     foreignKey: 'session_id'
 })
 
-Like.belongsTo(User, {
+Kudos.belongsTo(User, {
     foreignKey: 'user_id'
 })
 
-Like.belongsTo(Session, {
+Kudos.belongsTo(Session, {
     foreignKey: 'session_id'
 })
 
-User.hasMany(Like, {
+User.hasMany(Kudos, {
     foreignKey: 'user_id'
 })
 
-Session.hasMany(Like, {
+Session.hasMany(Kudos, {
     foreignKey: 'session_id'
 })
 
@@ -58,4 +58,4 @@ Follow.belongsTo(User, {
     foreignKey: 'user_id' 
 })
 
-module.exports = { User, Session, Benchmark, Follow, Like };
+module.exports = { User, Session, Benchmark, Follow, Kudos };

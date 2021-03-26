@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { Session, User, Like } = require('../../models')
+const { Session, User, Kudos } = require('../../models')
 const sequelize = require('../../config/connection');
 
 // get all sessions
@@ -68,10 +68,9 @@ router.post('/', (req, res) => {
 })
 
 
-// route for updating posts with a like
-router.put('/like', (req, res) => {
-    console.log(req.body)
-    Like.create({
+// route for updating posts with a kudos
+router.put('/kudos', (req, res) => {
+    Kudos.create({
         user_id: req.body.user_id,
         session_id: req.body.session_id
       }).then(() => {
@@ -82,13 +81,14 @@ router.put('/like', (req, res) => {
           },
           attributes: [
             'id',
+            'date',
             'category',
             'time',
             'level',
             'description',
             [
-            sequelize.literal('(SELECT COUNT(*) FROM like WHERE like.session_id = ' + req.body.session_id  + ')'),
-            'like_count'
+                sequelize.literal('(SELECT COUNT(*) FROM kudos WHERE session.id = kudos.session_id)'),
+                'kudos_count'
             ]
           ]
         })
