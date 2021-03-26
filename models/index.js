@@ -21,12 +21,39 @@ Benchmark.belongsTo(User, {
     foreignKey: 'user_id'
 })
 
-// User can follow many accounts
+User.belongsToMany(Session, {
+    through: Like,
+    as: 'liked_sessions',
+    foreignKey: 'user_id'
+})
+
+Session.belongsToMany(User, {
+    through: Like,
+    as: 'liked_sessions',
+    foreignKey: 'session_id'
+})
+
+Like.belongsTo(User, {
+    foreignKey: 'user_id'
+})
+
+Like.belongsTo(Session, {
+    foreignKey: 'session_id'
+})
+
+User.hasMany(Like, {
+    foreignKey: 'user_id'
+})
+
+Session.hasMany(Like, {
+    foreignKey: 'session_id'
+})
+
+// follow associations - not complete
 User.hasMany(Follow, {
     foreignKey: 'user_id'
 })
 
-// follow belongs to a user
 Follow.belongsTo(User, {
     foreignKey: 'user_id' 
 })
