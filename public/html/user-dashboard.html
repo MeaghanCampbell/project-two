@@ -11,7 +11,7 @@
     href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,100&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="../css/styles.css">
-  <title>Rock Fit Search Page</title>
+  <title>Rock Fit User Dashboard</title>
 </head>
 
 <body>
@@ -23,15 +23,23 @@
     <a><i class="fas fa-arrow-right fa-lg"></i></a>
   </nav>
 
+  <div class="dashboard-btns">
+    <button>Add Session</button>
+    <button>Add Benchmark</button>
+    <button>Saved Workouts</button>
+  </div>
+
   <main>
-    <div class="search-input-container">
-      <input class="search-input" type="text" placeholder="Search a user to view their workouts!">
+    <h3>Your Benchmarks</h2>
+    <div class="benchmark-section">
+      <div class="benchmark-circle">V6</div>
+      <div class="benchmark-circle">5.12a</div>
     </div>
 
+    <h3>Your Workouts</h2>
     <section>
       <div class="section-header">
-        <div class="section-header-content">
-          <p class="username">Searched-Username</p>
+        <div class="section-header-dashboard">
           <em class="date">MM/DD/YYYY</em>
         </div>
       </div>
@@ -44,8 +52,7 @@
 
     <section>
       <div class="section-header">
-        <div class="section-header-content">
-          <p class="username">Searched-Username</p>
+        <div class="section-header-dashboard">
           <em class="date">MM/DD/YYYY</em>
         </div>
       </div>
@@ -58,8 +65,7 @@
 
     <section>
       <div class="section-header">
-        <div class="section-header-content">
-          <p class="username">Searched-Username</p>
+        <div class="section-header-dashboard">
           <em class="date">MM/DD/YYYY</em>
         </div>
       </div>
@@ -69,19 +75,7 @@
         </div>
       </a>
     </section>
-
-    <section>
-      <div class="section-header">
-        <div class="section-header-content">
-          <p class="username">Searched-Username</p>
-          <em class="date">MM/DD/YYYY</em>
-        </div>
-      </div>
-      <a>
-        <div class="section-body">
-          <p>Workout Type | <em>Time</em> | Level</p>
-        </div>
-      </a>
-    </section>
+  </main>
 </body>
+
 </html>
