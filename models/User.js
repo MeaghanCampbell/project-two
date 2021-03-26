@@ -35,7 +35,14 @@ User.init(
             validate: {
                 len: [4]
             }
-        }
+        },
+        // follow_id: {
+        //     type: DataTypes.ENUM,
+        //     references: {
+        //         model: 'user',
+        //         key: 'id'
+        //     }
+        // }
     },
     {
         hooks: {
