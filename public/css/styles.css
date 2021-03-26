@@ -112,6 +112,11 @@ section {
     align-items: center;
     max-height: 30px;
 }
+.username {
+    text-decoration: none;
+    padding: 6px 0;
+    color: black;
+}
 
 .section-body {
     display: flex;
