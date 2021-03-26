@@ -1,15 +1,17 @@
 <main>
+    {{#each sessions as |session|}}
     <section>
       <div class="section-header">
         <div class="section-header-content">
-          <a href="/session/{{id}}" class="username">{{user.username}}</a>
-          <em class="date">{{date}}</em>
+          <a href="/session/{{session.id}}" class="username">{{session.user.username}}</a>
+          <em class="date">{{session.date}}</em>
         </div>
       </div>
       <a>
         <div class="section-body">
-          <p>{{category}} | <em>{{time}} minutes</em> | {{level}}</p>
+          <p>{{session.category}} | <em>{{session.time}} minutes</em> | {{session.level}}</p>
         </div>
       </a>
     </section>
+    {{/each}}
 </main>
