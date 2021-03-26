@@ -1,10 +1,10 @@
 const router = require('express').Router()
 const sequelize = require('../config/connection');
-const { User, Session, Benchmark, Kudos, Follow } = require('../models');
+const { User, Workout, Benchmark, Kudos, Follow } = require('../models');
 
 router.get('/', (req, res) => {
     console.log(req.session)
-    Session.findAll({
+    Workout.findAll({
         attributes: [
             'id',
             'date',
@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
             'time',
             'level',
             'description',
-            [sequelize.literal('(SELECT COUNT(*) FROM kudos WHERE session.id = kudos.session_id)'), 'kudos_count']
+            [sequelize.literal('(SELECT COUNT(*) FROM kudos WHERE workout.id = kudos.workout_id)'), 'kudos_count']
         ],
         include: [
             {
@@ -21,9 +21,9 @@ router.get('/', (req, res) => {
             }
         ]
     })
-    .then(dbSessionData => {
-        const sessions = dbSessionData.map(session => session.get({ plain: true }))
-        res.render('homepage', { sessions })
+    .then(dbWorkoutData => {
+        const workouts = dbWorkoutData.map(workout => workout.get({ plain: true }))
+        res.render('homepage', { workouts })
     })
     .catch(err => {
         console.log(err)
@@ -42,7 +42,8 @@ router.get('/login', (req, res) => {
     }
   
     res.render('login');
-  });
+});
+  
 
   
 

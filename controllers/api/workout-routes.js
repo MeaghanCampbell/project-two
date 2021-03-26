@@ -1,10 +1,10 @@
 const router = require('express').Router()
-const { Session, User, Kudos } = require('../../models')
+const { Workout, User, Kudos } = require('../../models')
 const sequelize = require('../../config/connection');
 
 // get all sessions
 router.get('/', (req, res) => {
-    Session.findAll({
+    Workout.findAll({
         attributes: [
           'id',
           'date',
@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
           'time',
           'level',
           'description',
-          [sequelize.literal('(SELECT COUNT(*) FROM kudos WHERE session.id = kudos.session_id)'), 'kudos_count']
+          [sequelize.literal('(SELECT COUNT(*) FROM kudos WHERE workout.id = kudos.workout_id)'), 'kudos_count']
         ],
         order: [['date', 'DESC']], 
         include: [
@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
           }
         ]
     })
-    .then(dbSessionData => res.json(dbSessionData))
+    .then(dbWorkoutData => res.json(dbWorkoutData))
     .catch(err => {
         console.log(err)
         res.status(500).json(err)
@@ -32,7 +32,7 @@ router.get('/', (req, res) => {
 
 // get one session by id
 router.get('/:id', (req, res) => {
-    Session.findOne({
+    Workout.findOne({
         where: {
             id: req.params.id
         },
@@ -43,7 +43,7 @@ router.get('/:id', (req, res) => {
             'time',
             'level',
             'description',
-            [sequelize.literal('(SELECT COUNT(*) FROM kudos WHERE session.id = kudos.session_id)'), 'kudos_count']
+            [sequelize.literal('(SELECT COUNT(*) FROM kudos WHERE workout.id = kudos.workout_id)'), 'kudos_count']
         ],
         include: [
             {
@@ -52,12 +52,12 @@ router.get('/:id', (req, res) => {
             }
         ]
     })
-    .then(dbSessionData => {
-        if (!dbSessionData) {
-            res.status(404).json({ message: 'No session found with this id' });
+    .then(dbWorkoutData => {
+        if (!dbWorkoutData) {
+            res.status(404).json({ message: 'No workout found with this id' });
             return;
         }
-        res.json(dbSessionData);
+        res.json(dbWorkoutData);
     })
     .catch(err => {
         console.log(err);
@@ -68,7 +68,7 @@ router.get('/:id', (req, res) => {
 
 // post a new session
 router.post('/', (req, res) => {
-    Session.create({
+    Workout.create({
         date: req.body.date,
         category: req.body.category,
         time: req.body.time,
@@ -76,7 +76,7 @@ router.post('/', (req, res) => {
         description: req.body.description,
         user_id: req.body.user_id
     })
-    .then(dbSessionData => res.json(dbSessionData))
+    .then(dbWorkoutData => res.json(dbWorkoutData))
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
@@ -88,12 +88,12 @@ router.post('/', (req, res) => {
 router.put('/kudos', (req, res) => {
     Kudos.create({
         user_id: req.body.user_id,
-        session_id: req.body.session_id
+        workout_id: req.body.workout_id
       }).then(() => {
         // then find the post we just voted on
-        return Session.findOne({
+        return Workout.findOne({
           where: {
-            id: req.body.session_id
+            id: req.body.workout_id
           },
           attributes: [
             'id',
@@ -103,12 +103,12 @@ router.put('/kudos', (req, res) => {
             'level',
             'description',
             [
-                sequelize.literal('(SELECT COUNT(*) FROM kudos WHERE session.id = kudos.session_id)'),
+                sequelize.literal('(SELECT COUNT(*) FROM kudos WHERE workout.id = kudos.workout_id)'),
                 'kudos_count'
             ]
           ]
         })
-        .then(dbSessionData => res.json(dbSessionData))
+        .then(dbWorkoutData => res.json(dbWorkoutData))
         .catch(err => {
           console.log(err);
           res.status(400).json(err);
@@ -119,7 +119,7 @@ router.put('/kudos', (req, res) => {
 
 // update a session by id
 router.put('/:id', (req, res) => {
-    Session.update(
+    Workout.update(
         {
             category: req.body.category,
             time: req.body.time,
@@ -132,12 +132,12 @@ router.put('/:id', (req, res) => {
             }
         }
     )
-    .then(dbSessionData => {
-        if (!dbSessionData) {
-            res.status(404).json({ message: 'No session found with this id' });
+    .then(dbWorkoutData => {
+        if (!dbWorkoutData) {
+            res.status(404).json({ message: 'No workout found with this id' });
             return;
         }
-    res.json(dbSessionData);
+    res.json(dbWorkoutData);
     })
     .catch(err => {
         console.log(err);
@@ -148,17 +148,17 @@ router.put('/:id', (req, res) => {
 
 // delete a session
 router.delete('/:id', (req, res) => {
-    Session.destroy({
+    Workout.destroy({
         where: {
             id: req.params.id
         }
     })
-    .then(dbSessionData => {
-        if (!dbSessionData) {
-          res.status(404).json({ message: 'No session found with this id' });
+    .then(dbWorkoutData => {
+        if (!dbWorkoutData) {
+          res.status(404).json({ message: 'No workout found with this id' });
           return;
         }
-    res.json(dbSessionData);
+    res.json(dbWorkoutData);
     })
     .catch(err => {
         console.log(err);

@@ -92,6 +92,14 @@ footer img {
     padding: 7px 12px;
     margin: 20px;
 }
+.signup-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+form {
+    text-align: center;
+}
 
 /* Homescreen Specifics */
 

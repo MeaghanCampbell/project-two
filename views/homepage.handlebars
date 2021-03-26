@@ -1,15 +1,15 @@
 <main>
-    {{#each sessions as |session|}}
+    {{#each workouts as |workout|}}
     <section>
       <div class="section-header">
         <div class="section-header-content">
-          <a href="/session/{{session.id}}" class="username">{{session.user.username}}</a>
-          <em class="date">{{session.date}}</em>
+          <a href="/session/{{workout.id}}" class="username">{{workout.user.username}}</a>
+          <em class="date">{{workout.date}}</em>
         </div>
       </div>
       <a>
         <div class="section-body">
-          <p>{{session.category}} | <em>{{session.time}} minutes</em> | {{session.level}}</p>
+          <p>{{workout.category}} | <em>{{workout.time}} minutes</em> | {{workout.level}}</p>
         </div>
       </a>
     </section>

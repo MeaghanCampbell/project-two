@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { Benchmark, User, Session, Follow } = require('../../models')
+const { Benchmark, User, Workout, Follow } = require('../../models')
 
 router.get('/', (req, res) => {
     Follow.findAll({
