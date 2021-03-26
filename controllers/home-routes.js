@@ -3,6 +3,7 @@ const sequelize = require('../config/connection');
 const { User, Workout, Benchmark, Kudos, Follow } = require('../models');
 
 router.get('/', (req, res) => {
+    console.log(req.session.loggedIn)
     if (!req.session.loggedIn) {
         res.render('login')
     } else {
@@ -25,7 +26,10 @@ router.get('/', (req, res) => {
     })
     .then(dbWorkoutData => {
         const workouts = dbWorkoutData.map(workout => workout.get({ plain: true }))
-        res.render('homepage', { workouts })
+        res.render('homepage', { 
+            workouts,
+            loggedIn: req.session.loggedIn
+        });
     })
     .catch(err => {
         console.log(err)
