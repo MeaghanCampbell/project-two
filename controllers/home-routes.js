@@ -3,7 +3,9 @@ const sequelize = require('../config/connection');
 const { User, Workout, Benchmark, Kudos, Follow } = require('../models');
 
 router.get('/', (req, res) => {
-    console.log(req.session)
+    if (!req.session.loggedIn) {
+        res.render('login')
+    } else {
     Workout.findAll({
         attributes: [
             'id',
@@ -29,6 +31,7 @@ router.get('/', (req, res) => {
         console.log(err)
         res.status(500).json(err)
     })
+    }
 })
 
 router.get('/signup', (req, res) => {

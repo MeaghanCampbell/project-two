@@ -15,6 +15,7 @@
 </head>
 
 <body>
+  {{#if loggedIn}}
   <nav>
     <a href="/"><i class="fas fa-home fa-lg"></i></a>
     <a href=""><i class="fas fa-user fa-lg"></i></a>
@@ -22,6 +23,8 @@
     <a href=""><i class="fas fa-bookmark fa-lg"></i></a>
     <button id="logout" class="btn-no-style"><i class="fas fa-arrow-right fa-lg"></i></button>
   </nav>
+  {{/if}}
+
 
     {{{ body }}}
 
