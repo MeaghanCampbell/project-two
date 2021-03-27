@@ -38,6 +38,8 @@ router.get('/', (req, res) => {
     }
 })
 
+// routing to signup in views > signup.handlebars
+
 router.get('/signup', (req, res) => {
     res.render('signup');
 });
