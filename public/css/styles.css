@@ -77,6 +77,33 @@ footer img {
     margin-bottom: none;
 }
 
+.signup-instead, .login-instead {
+    text-decoration: none;
+    color: white;
+    margin-top: 15px 0;
+    font-size: 10px;
+}
+.signup-instead:hover, .login-instead:hover {
+    color: #23A349;
+}
+
+.login-btn, .signup-btn {
+    font-size: 10px;
+    padding: 7px 12px;
+    margin: 20px;
+}
+.signup-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+form {
+    text-align: center;
+}
+.nav-link {
+    color: white;
+}
+
 /* Homescreen Specifics */
 
 nav {
@@ -111,6 +138,11 @@ section {
     justify-content: space-between;
     align-items: center;
     max-height: 30px;
+}
+.username {
+    text-decoration: none;
+    padding: 6px 0;
+    color: black;
 }
 
 .section-body {

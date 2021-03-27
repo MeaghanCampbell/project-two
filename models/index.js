@@ -1,14 +1,14 @@
 const User = require('./User');
-const Session = require('./Session');
+const Workout = require('./Workout');
 const Benchmark = require('./Benchmark');
 const Follow = require('./Follow')
 const Kudos = require('./Kudos')
 
-User.hasMany(Session, {
+User.hasMany(Workout, {
     foreignKey: 'user_id'
 });
 
-Session.belongsTo(User, {
+Workout.belongsTo(User, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE'
 })
@@ -21,32 +21,32 @@ Benchmark.belongsTo(User, {
     foreignKey: 'user_id'
 })
 
-User.belongsToMany(Session, {
+User.belongsToMany(Workout, {
     through: Kudos,
-    as: 'kudos_sessions',
+    as: 'kudos_workouts',
     foreignKey: 'user_id'
 })
 
-Session.belongsToMany(User, {
+Workout.belongsToMany(User, {
     through: Kudos,
-    as: 'kudos_sessions',
-    foreignKey: 'session_id'
+    as: 'kudos_workouts',
+    foreignKey: 'workout_id'
 })
 
 Kudos.belongsTo(User, {
     foreignKey: 'user_id'
 })
 
-Kudos.belongsTo(Session, {
-    foreignKey: 'session_id'
+Kudos.belongsTo(Workout, {
+    foreignKey: 'workout_id'
 })
 
 User.hasMany(Kudos, {
     foreignKey: 'user_id'
 })
 
-Session.hasMany(Kudos, {
-    foreignKey: 'session_id'
+Workout.hasMany(Kudos, {
+    foreignKey: 'workout_id'
 })
 
 // follow associations - not complete
@@ -58,4 +58,4 @@ Follow.belongsTo(User, {
     foreignKey: 'user_id' 
 })
 
-module.exports = { User, Session, Benchmark, Follow, Kudos };
+module.exports = { User, Workout, Benchmark, Follow, Kudos };
