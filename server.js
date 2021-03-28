@@ -6,7 +6,7 @@ const path = require('path')
 const app = express();
 const PORT = process.env.PORT || 3001;
 //set views folder??
-app.set('views', path.join(_dirname, 'views'));
+app.set('views', path.join(__dirname, 'views'));
 
 // make public assets available for server
 app.use(express.static(path.join(__dirname, 'public')))
