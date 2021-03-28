@@ -33,8 +33,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // setup handlebars
 const exphbs = require('express-handlebars');
-//creae default????
-const hbs = exphbs.create({defaultLayout:'main'});
+const hbs = exphbs.create({});
 
 app.engine('handlebars', hbs.engine);
 // set up view engine
