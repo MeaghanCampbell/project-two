@@ -1,19 +1,22 @@
 <main>
-    <section class="workout-session">
+
+    <main>
+    {{#each workouts as |workout|}}
+    <section>
       <div class="section-header">
         <div class="section-header-dashboard">
-          <em class="date">MM/DD/YYYY</em>
+          <a href="/session/{{workout.id}}" class="username">{{workout.user.username}}</a>
+          <em class="date">{{workout.date}}</em>
         </div>
       </div>
-      <div class="session-content">
-        <p>Category: <span class="session-span">Bouldering</span></p>
-        <p>Time to complete: <span class="session-span">90 minutes</span></p>
-        <p>Level of difficulty: <span class="session-span">Intermediate</span></p>
+       <div class="session-content">
+        <p>Category: <span class="session-span">{{workout.category}}</span></p>
+        <p>Time to complete: <span class="session-span">{{workout.time}}</span></p>
+        <p>Level of difficulty: <span class="session-span">{{workout.level}}</span></p>
         
-        <h4>{{Description}}</h4>
+        <P>Description</P>
            <div class="body" id="session-description">
-        <p><span class="session-span">Workout description here...</span></p>
-          {{{body}}}
+        <p><span class="session-span">{{workout.description}}</span></p>
          </div>
            </div>
       </div>
@@ -24,9 +27,12 @@
       </a>
       <a>
         <div class="save-banner"> 
-            <button class="update-session">
-          <p> UPDATE SESSION</p></button>
+            <button class="update-session" id="btnUpdate" type="button">UPDATE SESSION</button>
         </div>
       </a>
     </section>
-  </main>
+    {{/each}}
+</main>
+    
+    
+    

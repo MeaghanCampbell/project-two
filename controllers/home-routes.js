@@ -53,7 +53,27 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
   
+/* start routing to benchmark in views > benchmark.handlebars
+router.get('/benchmark', (req, res) => {
+    if (!req.session.loggedIn) {
+        res.render('login')
+    } else {
+    benchmark.findAll({
+        attributes: [
+            'id',
+            'boulder_grade',
+            'route_grade',
+        ],
+        include: [
+                {
+                    model: User,
+                    attributes: ['username']
+                }
+            ]
+        });
+        */
 
-  
+
+
 
 module.exports = router

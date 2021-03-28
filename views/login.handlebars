@@ -4,7 +4,8 @@
 
     <main class="login-main">
         <h1>ROCK<em>fit</em></h1>
-        <form class="login-form">
+        <!--added form action-->
+        <form class="login-form" action="user/login" id="login" method="POST" >
             <h2>Login</h2>
             <div>
                 <label for="username-login"></label>
@@ -15,7 +16,7 @@
                 <input type="text" placeholder="password" id="password-login" />
             </div>
             <div>
-                <button type="submit" id="login" class="login-btn">Login</button>
+                <button type="submit" value="login" class="login-btn">Login</button>
             </div>
             <a href="/signup" class="signup-instead">Sign Up Instead</a>
         </form>

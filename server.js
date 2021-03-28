@@ -5,6 +5,8 @@ const path = require('path')
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+//set views folder??
+app.set('views', path.join(_dirname, 'views'));
 
 // make public assets available for server
 app.use(express.static(path.join(__dirname, 'public')))
@@ -31,13 +33,24 @@ app.use(express.urlencoded({ extended: true }));
 
 // setup handlebars
 const exphbs = require('express-handlebars');
-const hbs = exphbs.create({});
+//creae default????
+const hbs = exphbs.create({defaultLayout:'main'});
 
 app.engine('handlebars', hbs.engine);
+// set up view engine
 app.set('view engine', 'handlebars');
 
 // turn on routes
 app.use(routes);
+//get routes??? render homepage view
+app.get('/', function(req, res){ res.render('homepage');
+
+});
+//app set port??
+app.set('port', (process.env.PORT));
+app.listen(app.get('port'), function(){
+  console.log('server started on port');
+});
 
 // turn on connection to db and server
 sequelize.sync({ force: false }).then(() => {
