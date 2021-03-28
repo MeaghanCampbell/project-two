@@ -23,9 +23,9 @@ router.get('/', (req, res) => {
                 model: User,
                 attributes: ['username'],
                 include: {
-                    model: Benchmark,
+                   model: Benchmark,
                     attributes: ['boulder_grade', 'route_grade', 'user_id']
-                }
+                 }
             },
             {
                 model: User,
@@ -42,5 +42,6 @@ router.get('/', (req, res) => {
         res.status(500).json(err);
       });
 });
+
 
 module.exports = router
