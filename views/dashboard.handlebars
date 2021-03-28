@@ -1,0 +1,32 @@
+
+
+<div class="dashboard-btns">
+     <button>Add Session</button>
+    <button>Add Benchmark</button>
+    <button>Saved Workouts</button>
+  </div>
+
+  <main>
+    <h3>Your Benchmarks</h2>
+    <div class="benchmark-section">
+      <div class="benchmark-circle">{{Benchmark.boulder_grade}}</div>
+      <div class="benchmark-circle">{{benchmark.route_grade}}</div>
+    </div>
+
+    <h3>Your Workouts</h2>
+     {{#each workouts as |workout|}}
+    <section>
+      <div class="section-header">
+        <div class="section-header-content">
+          <em class="date">{{workout.date}}</em>
+        </div>
+      </div>
+      <a>
+        <div class="section-body">
+          <p>{{workout.category}} | <em>{{workout.time}} minutes</em> | {{workout.level}}</p>
+        </div>
+      </a>
+    </section>
+    {{/each}}
+
+  </main>
