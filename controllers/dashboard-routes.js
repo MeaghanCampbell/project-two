@@ -3,7 +3,6 @@ const sequelize = require('../config/connection')
 const { User, Workout, Benchmark, Kudos, Follow } = require('../models')
 
 // main dashboard view
-
 router.get('/', (req, res) => {
     Workout.findAll({
         where: {
@@ -43,35 +42,6 @@ router.get('/', (req, res) => {
         res.status(500).json(err);
       });
 });
-
-// router.get('/', (req, res) => {
-//     User.findAll({
-//         where: {
-//             id: req.session.id
-//         },
-//         attributes: { exclude: ['password']},
-//         include: [
-//             {
-//                 model: Workout,
-//                 attributes: ['id', 'date', 'category', 'time', 'level', 'description']
-//             },
-//             {
-//                 model: Benchmark,
-//                 attributes: ['id', 'boulder_grade', 'route_grade']
-
-//             }
-//         ]
-//     })
-//     .then(dbUserData => {
-//         const users = dbUserData.map(user => user.get({ plain: true }));
-//         console.log(users)
-//         res.render('dashboard', { users, loggedIn: true });
-//       })
-//       .catch(err => {
-//         console.log(err);
-//         res.status(500).json(err);
-//       });
-// })
 
 
 module.exports = router
