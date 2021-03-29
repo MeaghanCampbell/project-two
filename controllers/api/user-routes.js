@@ -4,7 +4,18 @@ const { User, Workout, Benchmark, Follow } = require('../../models')
 // get users
 router.get('/', (req, res) => {
     User.findAll({
-        attributes: { exclude: ['password']}
+        attributes: { exclude: ['password']},
+        include: [
+            {
+                model: Workout,
+                attributes: ['id', 'date', 'category', 'time', 'level', 'description']
+            },
+            {
+                model: Benchmark,
+                attributes: ['id', 'boulder_grade', 'route_grade']
+
+            }
+        ]
     })
     .then(dbUserData => res.json(dbUserData))
     .catch(err => {

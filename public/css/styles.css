@@ -184,6 +184,11 @@ section {
     padding: 1px 4px 0 0;
 }
 
+.section-header-dashboard {
+    display: flex;
+    justify-content: space-between;
+}
+
 /* Search Page Specifics */
 
 .search-input-container {

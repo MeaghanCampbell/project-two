@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { Workout, User, Kudos } = require('../../models')
+const { Workout, User, Kudos, Benchmark } = require('../../models')
 const sequelize = require('../../config/connection');
 
 // get all sessions
@@ -18,7 +18,15 @@ router.get('/', (req, res) => {
         include: [
           {
               model: User,
-              attributes: ['username']
+              attributes: ['username'],
+              include: {
+                  model: Benchmark,
+                  attributes: ['route_grade', 'boulder_grade']
+              }
+          },
+          {
+                model: User,
+                attributes: ['username']
           }
         ]
     })

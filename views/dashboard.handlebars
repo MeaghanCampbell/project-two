@@ -1,7 +1,6 @@
 
-
 <div class="dashboard-btns">
-     <button>Add Session</button>
+    <button>Add Session</button>
     <button>Add Benchmark</button>
     <button>Saved Workouts</button>
   </div>
@@ -9,10 +8,11 @@
   <main>
     <h3>Your Benchmarks</h2>
     <div class="benchmark-section">
-      <div class="benchmark-circle">{{Benchmark.boulder_grade}}</div>
-      <div class="benchmark-circle">{{benchmark.route_grade}}</div>
-    </div>
 
+      <div class="benchmark-circle">{{benchmarks.route_grade}}</div>
+      <div class="benchmark-circle">V{{benchmarks.boulder_grade}}</div>
+    </div>
+  {{#if workouts.length}}
     <h3>Your Workouts</h2>
      {{#each workouts as |workout|}}
     <section>
@@ -28,5 +28,5 @@
       </a>
     </section>
     {{/each}}
-
+  {{/if}}
   </main>
