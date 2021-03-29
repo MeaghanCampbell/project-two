@@ -100,27 +100,11 @@ router.get('/workout/:id', (req, res) => {
 })
 
 // route to search a user
-
-  
-/* start routing to benchmark in views > benchmark.handlebars
-router.get('/benchmark', (req, res) => {
-    if (!req.session.loggedIn) {
-        res.render('login')
-    } else {
-    benchmark.findAll({
-        attributes: [
-            'id',
-            'boulder_grade',
-            'route_grade',
-        ],
-        include: [
-                {
-                    model: User,
-                    attributes: ['username']
-                }
-            ]
-        });
-        */
+router.get('/search', (req, res) => {
+    res.render('search', {
+        loggedIn: req.session.loggedIn
+    })
+})
 
 
 

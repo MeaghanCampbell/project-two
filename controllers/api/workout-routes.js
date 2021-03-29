@@ -73,6 +73,44 @@ router.get('/:id', (req, res) => {
     });
 })
 
+//route to search user workouts
+router.get('/:username', (req, res) => {
+    User.findOne({
+        where: {
+            username: req.params.username
+        }
+    })
+    .then((dbUserData) => {
+        Workout.findAll({
+            where: {
+                user_id: dbUserData.id
+            },
+            attributes: [
+                'id',
+                'date',
+                'category',
+                'time',
+                'level',
+                'description',
+                [sequelize.literal('(SELECT COUNT(*) FROM kudos WHERE workout.id = kudos.workout_id)'), 'kudos_count']
+            ]
+        })
+    })
+    .then(dbSearchedData => {
+        const searchedWorkout = dbSearchedData.get({ plain: true });
+        console.log(searchedWorkout)
+
+        res.render('search-form', { 
+            searchedWorkout,
+            loggedIn: req.session.loggedIn
+        });
+    })
+    .catch(err => {
+        console.log(err)
+        res.status(500).json(err)
+    })
+})
+
 
 // post a new session
 router.post('/', (req, res) => {
