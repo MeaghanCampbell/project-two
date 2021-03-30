@@ -31,6 +31,11 @@ em {
     letter-spacing: normal;
 }
 
+h4 {
+    font-weight: 100;
+    margin-top: 0px;
+}
+
 h6 {
     font-weight: 400;
 }
@@ -55,11 +60,67 @@ input {
     padding: 7px;
     border: 1px solid #23A349;
     outline: none;
+    font-family: inherit;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    border: 1px solid #23A349;
+    -webkit-text-fill-color: #c3c3c3;
+    -webkit-box-shadow: 0 0 0px 1000px #000000 inset;
+    font-family: inherit;
+
 }
 
 input:hover {
     border-color: #ffffff;
     color: #ffffff;
+}
+
+.login-btn, .signup-btn, .search-btn /* search-btn on search.handlebars */ {
+    font-size: 10px;
+    padding: 5px 10px;
+    margin: 15px;
+    -webkit-appearance: none;
+    color: #ffffff;
+    background: linear-gradient(#97C671,#23A349);
+    border-radius: 5px;
+    border: 1px solid #ffffff;
+    outline: none;
+    font-family: inherit;
+    font-weight: 400;
+}
+
+.signup-instead, .login-instead {
+    text-decoration: none;
+    color: white;
+    margin-top: 15px 0;
+    font-size: 10px;
+}
+
+.signup-instead:hover, .login-instead:hover {
+    color: #23A349;
+}
+
+.signup-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    text-align: center;
+}
+
+.nav-link {
+    color: white;
 }
 
 footer {
@@ -77,33 +138,6 @@ footer img {
     margin-bottom: none;
 }
 
-.signup-instead, .login-instead {
-    text-decoration: none;
-    color: white;
-    margin-top: 15px 0;
-    font-size: 10px;
-}
-.signup-instead:hover, .login-instead:hover {
-    color: #23A349;
-}
-
-.login-btn, .signup-btn {
-    font-size: 10px;
-    padding: 7px 12px;
-    margin: 20px;
-}
-.signup-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-form {
-    text-align: center;
-}
-.nav-link {
-    color: white;
-}
-
 /* Homescreen Specifics */
 
 nav {
@@ -118,6 +152,17 @@ nav {
 
 .fa-lg:hover {
     color: #cccccc;
+}
+
+.btn-no-style {
+    border: none;
+    background: none;
+    color: #ffffff;
+    outline: none;
+}
+
+.btn-no-style:hover {
+    background: none;
 }
 
 section {
@@ -224,8 +269,12 @@ a {
     display: flex;
     align-self: center;
     min-width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     align-self: center;
+}
+
+.search-btn {
+    margin-top: 0px;
 }
 
 /* User Dashboard Specifics */
@@ -244,11 +293,12 @@ a {
     margin: 10px;
     border-radius: 5px;
 }
+
 .dashboard-btns a:hover {
     background: linear-gradient(#23A349,#97C671);
 }
 
-button {
+.dashboard-btns {
     -webkit-appearance: none;
     color: #ffffff;
     background: linear-gradient(#97C671,#23A349);
