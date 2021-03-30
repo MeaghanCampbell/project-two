@@ -1,12 +1,8 @@
 async function searchFormHandler(event) {
         event.preventDefault();
-        let searchedUser = document.querySelector('.search-input').value.trim()
+        let searchedUser = document.querySelector('#search-users').value.trim()
         if (searchedUser) {
-            const response = await fetch('/api/workouts/:' + searchedUser, {
-                method: 'get'
-            })
-            console.log(response)
-    }
+            window.location = ('/api/searches/' + searchedUser)
+        }
 }
-
-document.querySelector('.search-input-container').addEventListener('submit', searchFormHandler)
+document.querySelector('#search-input-cont').addEventListener('submit', searchFormHandler)
