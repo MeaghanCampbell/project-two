@@ -1,44 +1,36 @@
 <main>
-    <h3>Add A Session</h3>
+    <h3>Add A Workout</h3>
     <section class="workout-session">
-         <div class="section-header">
-        <div class="section-header-content">
-          <em class="date">{{workout.date}}</em>
-        </div>
-      </div>
-      <div class="session-content">
-        <p>Workout Type</p>
-        <select>
-           {{#select status}}
+      <form id="add-session-form" class="session-content">
+
+        <label for="date" class="date">Add Date</label>
+        <input id="date" class="workout-input" type="text" name="date" />
+
+        <label for="workout-type">Workout Type</label>
+        <select id="category" class="workout-input" id="workout-type" name="workout-type">
           <option value="stength">Strength</option>
           <option value="bouldering">Bouldering</option>
           <option value="routes">Routes</option>
           <option value="hangboard">Hangboard</option>
           <option value="campus">Campus</option>
           <option value="stretching">Stretching</option>
-          {{/select}}
         </select>
 
-        <p>Time to complete</p>
-        <input class="add-session-input" type="text" placeholder="30 mins">{{time}}</input>
+        <label for="time">Time to complete</label>
+        <input id="time" class="workout-input" type="text" name="add-time" />
 
-        <p>Level of difficulty</p>
-        <select>
-          {{#select status}}
+        <label for="level">Level of difficulty</label>
+        <select class="workout-input" id="level" name="level">
           <option value="beginner">Beginner</option>
           <option value="intermediate">Intermediate</option>
           <option value="advanced">Advanced</option>
-          {{/select}}
         </select>
 
-        <p>Description</p>
-        <textarea class="add-session-description">{{description}}</textarea>
-      </div>
-      <a>
-        <div class="save-banner">
-          <i class="fas fa-bookmark save-icon"></i>
-          <p> SAVE YOUR SESSION</p>
-        </div>
-      </a>
+        <label for="add-session-description">Description</label>
+        <textarea id="description" class="workout-input" name="add-session-description"></textarea>
+        
+        <button type="submit" class="save-your-btn">SAVE YOUR WORKOUT</button>
+    </form>
     </section>
   </main>
+  <script>'/js/add-workout.js'</script>
