@@ -44,4 +44,9 @@ router.get('/', (req, res) => {
 });
 
 
+router.get('/add', (req, res) => {
+    res.render('add-workout', { loggedIn: true });
+});
+
+
 module.exports = router

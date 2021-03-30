@@ -195,6 +195,18 @@ section {
     align-items: center;
     justify-content: center;
     min-height: 50px;
+    text-decoration: none;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+.save-your-btn {
+    padding: 5px 15px;
+    font-size: 16px;
+    margin-bottom: 20px;
 }
 
 .section-body:hover {
@@ -206,6 +218,17 @@ section {
 
 .session-content {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.workout-input {
+    margin: 10px 0 30px 0;
+    width: 80%;
+}
+
+.date {
+    margin-top: 10px;
 }
 
 .session-span {
@@ -260,6 +283,19 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.dashboard-btns a {
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(#97C671,#23A349);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.dashboard-btns a:hover {
+    background: linear-gradient(#23A349,#97C671);
 }
 
 .dashboard-btns {
@@ -341,7 +377,6 @@ select {
     font-size: 12px;
     background-color: #ffffff;
     text-align: left;
-    margin: 0;
 }
 
 ::placeholder {
@@ -361,7 +396,6 @@ select {
     font-size: 12px;
     background-color: #ffffff;
     text-align: left;
-    margin: 0 0 20px 0;
     resize: none;
 }
 
