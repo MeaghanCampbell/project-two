@@ -48,5 +48,13 @@ router.get('/add', (req, res) => {
     res.render('add-workout', { loggedIn: true });
 });
 
+router.get('/addbenchmark', (req, res) => {
+    res.render('add-benchmark', { loggedIn: true })
+})
+
+router.get('/updatebenchmark', (req, res) => {
+    res.render('update-benchmark', { loggedIn: true })
+})
+
 
 module.exports = router
