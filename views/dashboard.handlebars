@@ -1,7 +1,11 @@
 
 <div class="dashboard-btns">
-    <a href="/dashboard/add">Add Session</a>
-    <a>Add Benchmark</a>
+    <a href="/dashboard/add">Add Workout</a>
+    {{#if benchmarks}}
+    <a href="/dashboard/updatebenchmark">Update Benchmark</a>
+    {{else}}
+    <a href="/dashboard/addbenchmark">Add Benchmark</a>
+    {{/if}}
     <a>Saved Workouts</a>
 </div>
 
@@ -12,7 +16,6 @@
       <div class="benchmark-circle">{{benchmarks.route_grade}}</div>
       <div class="benchmark-circle">V{{benchmarks.boulder_grade}}</div>
     </div>
-  {{#if workouts.length}}
     <h3>Your Workouts</h2>
     {{#each workouts as |workout|}}
     <section>
@@ -28,5 +31,4 @@
       </a>
     </section>
     {{/each}}
-  {{/if}}
   </main>

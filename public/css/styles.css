@@ -207,6 +207,12 @@ a {
     padding: 5px 15px;
     font-size: 16px;
     margin-bottom: 20px;
+    background: linear-gradient(#97C671,#23A349);
+    border-radius: 5px;
+    border: none;
+    color: white;
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .section-body:hover {
@@ -301,9 +307,7 @@ a {
 .dashboard-btns {
     -webkit-appearance: none;
     color: #ffffff;
-    background: linear-gradient(#97C671,#23A349);
     border-radius: 5px;
-    border: 2px solid #ffffff;
     outline: none;
     font-family: inherit;
     font-size: 10px;
@@ -325,6 +329,12 @@ h3 {
 .benchmark-section {
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.add-benchmark-section {
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -407,6 +417,8 @@ select {
     font-weight: 500;
     color: #4AB859;
     margin-bottom: 0;
+    font-size: 15px;
+    margin-top: 17px;
 }
 
 .v-5-sections {
@@ -419,6 +431,7 @@ select {
 .benchmark-select {
     max-width: 50px;
     margin: 0 2px;
+    margin-bottom: 20px;
 }
 
 .save-banner-benchmark {
@@ -429,6 +442,21 @@ select {
 .save-banner-benchmark:hover {
     background: linear-gradient(#23A349, #97C671);
 }
+
+
+.benchmark-btn {
+    background: linear-gradient(#23A349, #97C671);
+    border: none;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 20px;
+}
+.benchmark-btn:hover {
+    background: linear-gradient(#97C671, #23A349);
+}
+
 
 /* View Workout Specifics */
 
