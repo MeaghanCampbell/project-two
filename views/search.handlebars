@@ -1,36 +1,31 @@
- <main>
-    <div class="search-input-container">
-      <input class="search-input" type="text" placeholder="Search a user to view their workouts!">
-    </div>
-    {{#each users as |user|}}
+<main>
+    <form id="search-input-cont" class="search-input-container">
+      <div>
+        <label for="search-users"></label>
+        <input class="search-input" type="text" placeholder="Search a user to view their workouts!" id="search-users" />
+      </div>
+      <div>
+        <button type="submit" id="search" class="search-btn">Search</button>
+      </div>
+    </form>
+  {{#if data}}
+    {{#each data as |workout|}}
     <section>
       <div class="section-header">
         <div class="section-header-content">
-          <a href="/session/{{kudos.id}}" class="username">{{kudos.user_id.username}}</a>
-          <em class="date">{{kudos.workoutout_id.date}}</em>
+          <a href="/workout/{{workout.id}}" class="username">{{workout.user.username}}</a>
+          <em class="date">{{workout.date}}</em>
         </div>
       </div>
       <a>
         <div class="section-body">
-          <p>{{kudos.workout_id.category}} | <em>{{kudos.workout_id.time}} minutes</em> | {{kudos.workout_id.level}}</p>
+          <p>{{workout.category}} | <em>{{workout.time}} minutes</em> | {{workout.level}}</p>
         </div>
       </a>
     </section>
     {{/each}}
+  {{/if}}
 </main>
-
-    <section>
-      <div class="section-header">
-        <div class="section-header-content">
-          <p class="username">Searched-Username</p>
-          <em class="date">MM/DD/YYYY</em>
-        </div>
-      </div>
-      <a>
-        <div class="section-body">
-          <p>Workout Type | <em>Time</em> | Level</p>
-        </div>
-      </a>
-    </section>
+<script src="/js/search.js"></script>
 
     
