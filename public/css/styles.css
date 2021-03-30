@@ -107,7 +107,23 @@ input:hover {
 
 .fa-google {
     padding-right: 5px;
+    /* background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    position: relative; */
 }
+
+/* .fa-google::after {
+    background: none;
+    content: attr(data-text);
+    left: 0;
+    position: absolute;
+    text-shadow: 1px 1px 2px #333333;
+    top: 0;
+    z-index: -1;
+} */
 
 .nav-link {
     color: #ffffff;
@@ -164,7 +180,7 @@ nav {
 }
 
 .fa-lg:hover {
-    color: #cccccc;
+    color: #c3c3c3;
 }
 
 .btn-no-style {
