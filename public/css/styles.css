@@ -25,6 +25,7 @@ header img {
 h1 {
     letter-spacing: 3px;
     font-weight: 500;
+    text-shadow: 3px 3px 3px #000000;
 }
 
 em {
@@ -34,6 +35,7 @@ em {
 h4 {
     font-weight: 100;
     margin-top: 0px;
+    text-shadow: 2px 2px 2px #000000;
 }
 
 h6 {
@@ -95,6 +97,8 @@ input:hover {
     outline: none;
     font-family: inherit;
     font-weight: 400;
+    text-shadow: 1px 1px 2px #333333;
+
 }
 
 .google-btn {
@@ -103,7 +107,6 @@ input:hover {
 
 .fa-google {
     padding-right: 5px;
-    background;: linear-gradient(red, yellow, blue)
 }
 
 .nav-link {
@@ -115,6 +118,7 @@ input:hover {
     color: white;
     margin-top: 15px 0;
     font-size: 10px;
+    text-shadow: 2px 2px 3px #000000;
 }
 
 .signup-instead:hover, .login-instead:hover {
