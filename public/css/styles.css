@@ -76,7 +76,6 @@ select:-webkit-autofill:focus {
     -webkit-text-fill-color: #c3c3c3;
     -webkit-box-shadow: 0 0 0px 1000px #000000 inset;
     font-family: inherit;
-    
 }
 
 input:hover {
@@ -84,8 +83,7 @@ input:hover {
     color: #ffffff;
 }
 
-
-.login-btn, .signup-btn, .search-btn /* search-btn on search.handlebars */ {
+.login-btn, .search-btn, .google-btn /* search-btn on search.handlebars */ {
     font-size: 10px;
     padding: 5px 10px;
     margin: 15px;
@@ -97,6 +95,15 @@ input:hover {
     outline: none;
     font-family: inherit;
     font-weight: 400;
+}
+
+.google-btn {
+    margin: 0px 0px 5px;
+}
+
+.fa-google {
+    padding-right: 5px;
+    background;: linear-gradient(red, yellow, blue)
 }
 
 .nav-link {
