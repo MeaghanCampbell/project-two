@@ -150,6 +150,18 @@ section {
     align-items: center;
     justify-content: center;
     min-height: 50px;
+    text-decoration: none;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+.save-your-btn {
+    padding: 5px 15px;
+    font-size: 16px;
+    margin-bottom: 20px;
 }
 
 .section-body:hover {
@@ -222,6 +234,18 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.dashboard-btns a {
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(#97C671,#23A349);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+}
+.dashboard-btns a:hover {
+    background: linear-gradient(#23A349,#97C671);
 }
 
 button {

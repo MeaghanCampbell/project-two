@@ -82,7 +82,7 @@ router.post('/', (req, res) => {
         time: req.body.time,
         level: req.body.level,
         description: req.body.description,
-        user_id: req.body.user_id
+        user_id: req.session.user_id
     })
     .then(dbWorkoutData => res.json(dbWorkoutData))
     .catch(err => {

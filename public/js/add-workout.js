@@ -1,4 +1,6 @@
 async function newWorkoutHandler(event) {
+
+    console.log("javascript loaded")
     event.preventDefault();
   
     const date = document.querySelector('#date').value.trim();
