@@ -51,7 +51,7 @@ router.post('/', (req, res) => {
     Benchmark.create({
         route_grade: req.body.route_grade,
         boulder_grade: req.body.boulder_grade,
-        user_id: req.body.user_id
+        user_id: req.session.user_id
     })
     .then(dbBenchmarkData => res.json(dbBenchmarkData))
     .catch(err => {

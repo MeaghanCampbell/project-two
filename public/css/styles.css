@@ -13,6 +13,8 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+/* Login & Sign In Specifics */
+
 header img {
     width: 100%;
     background-position: center top;
@@ -23,24 +25,21 @@ header img {
 h1 {
     letter-spacing: 3px;
     font-weight: 500;
+    text-shadow: 3px 3px 3px #000000;
 }
 
 em {
     letter-spacing: normal;
 }
 
-h6 {
-    font-weight: 400;
+h4 {
+    font-weight: 100;
+    margin-top: 0px;
+    text-shadow: 2px 2px 2px #000000;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    background: linear-gradient(#23A349, #97C671);
-    color: #ffffff;
-    margin: 20px;
-    padding: 15px;
-    border-radius: 3px;
+h6 {
+    font-weight: 400;
 }
 
 main {
@@ -63,11 +62,143 @@ input {
     padding: 7px;
     border: 1px solid #23A349;
     outline: none;
+    font-family: inherit;
+}
+
+.signin-input::placeholder{
+    color:#c3c3c3;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    border: 1px solid #23A349;
+    -webkit-text-fill-color: #c3c3c3;
+    -webkit-box-shadow: 0 0 0px 1000px #000000 inset;
+    font-family: inherit;
 }
 
 input:hover {
     border-color: #ffffff;
     color: #ffffff;
+}
+
+.login-btn, .search-btn, .google-btn /* search-btn on search.handlebars */ {
+    font-size: 10px;
+    padding: 5px 10px;
+    margin: 15px;
+    -webkit-appearance: none;
+    color: #ffffff;
+    background: linear-gradient(#97C671,#23A349);
+    border-radius: 5px;
+    border: 1px solid #ffffff;
+    outline: none;
+    font-family: inherit;
+    font-weight: 400;
+    text-shadow: 1px 1px 2px #333333;
+
+}
+
+.google-btn {
+    margin: 0px 0px 5px;
+}
+
+.fa-google {
+    padding-right: 5px;
+    /* background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    position: relative; */
+}
+
+/* .fa-google::after {
+    background: none;
+    content: attr(data-text);
+    left: 0;
+    position: absolute;
+    text-shadow: 1px 1px 2px #333333;
+    top: 0;
+    z-index: -1;
+} */
+
+.nav-link {
+    color: #ffffff;
+}
+
+.signup-instead, .login-instead {
+    text-decoration: none;
+    color: white;
+    margin-top: 15px 0;
+    font-size: 10px;
+    text-shadow: 2px 2px 3px #000000;
+}
+
+.signup-instead:hover, .login-instead:hover {
+    color: #23A349;
+}
+
+.signup-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    text-align: center;
+}
+
+
+footer {
+    display: flex;
+    justify-content: end;
+    bottom: 0;
+    position: absolute;
+}
+
+footer img {
+    width: 100%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: none;
+}
+
+/* Homescreen Specifics */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(#23A349, #97C671);
+    color: #ffffff;
+    margin: 20px;
+    padding: 15px;
+    border-radius: 3px;
+    text-shadow: 1px 1px 4px #333333;
+}
+
+.fa-lg:hover {
+    color: #c3c3c3;
+}
+
+.btn-no-style {
+    border: none;
+    background: none;
+    color: #ffffff;
+    outline: none;
+    text-shadow: 1px 1px 4px #333333;
+
+}
+
+.btn-no-style:hover {
+    background: none;
 }
 
 section {
@@ -80,8 +211,7 @@ section {
 .section-header {
     background-color: #ffffff;
     color: #000000;
-    padding-left: 7px;
-    padding-right: 7px;
+    padding: 0 7px;
 }
 
 .section-header-content {
@@ -89,6 +219,13 @@ section {
     justify-content: space-between;
     align-items: center;
     max-height: 30px;
+    min-height: 25px;
+}
+
+.username {
+    text-decoration: none;
+    padding: 6px 0;
+    color: black;
 }
 
 .section-body {
@@ -96,6 +233,24 @@ section {
     align-items: center;
     justify-content: center;
     min-height: 50px;
+    text-decoration: none;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+.save-your-btn {
+    padding: 5px 15px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    background: linear-gradient(#97C671,#23A349);
+    border-radius: 5px;
+    border: none;
+    color: white;
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .section-body:hover {
@@ -103,9 +258,23 @@ section {
     text-shadow: 3px, 3px #000000;
 }
 
+/* Workout View Specifics */
+
 .session-content {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+.workout-input {
+    margin: 10px 0 30px 0;
+    width: 80%;
+}
+
+/* .date {
+    margin-top: 10px;
+} */
 
 .session-span {
     font-weight: 300;
@@ -115,7 +284,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-height: 35px;
+    height: 35px;
     background: linear-gradient(#97C671,#23A349);
     font-size: 15px;
 }
@@ -124,34 +293,254 @@ section {
     background: linear-gradient(#23A349, #97C671);
 }
 
-.save-icon {
-    padding-right: 4px;
-    padding-top: 1px;
+.save-btn {
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 500;
+    text-shadow: 1px 1px 3px #333333;
+    outline: none;
 }
 
-.search-section-content {
+.save-icon {
+    padding: 1px 4px 0 0;
+}
+
+.section-header-dashboard {
     display: flex;
-    align-items: center;
+    justify-content: space-between;
+}
+
+/* Search Page Specifics */
+
+.search-input-container {
+    display: flex;
     justify-content: center;
-    min-height: 50px;
+    align-items: center;
 }
 
 .search-input {
-    min-width: 90%;
-    margin-bottom: 27px;
-    margin-left: 5px;
+    display: flex;
+    align-self: center;
+    min-width: 100%;
+    margin-bottom: 20px;
+    align-self: center;
 }
 
-footer {
-    left: 0;
-    bottom: 0;
-    overflow: hidden;
-    position: absolute;
+.search-input::placeholder {
+    color: #c3c3c3;
 }
 
-footer img {
-    width: 100%;
-    background-position: center bottom;
-    background-repeat: no-repeat;
-    background-size: cover;
+.search-btn {
+    margin-top: 0px;
+}
+
+/* User Dashboard Specifics */
+
+.dashboard-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dashboard-btns a {
+    -webkit-appearance: none;
+    color: #ffffff;
+    background: linear-gradient(#97C671,#23A349);
+    padding: 5px;
+    margin: 0 1px;
+    border-radius: 5px;
+    outline: none;
+    font-family: inherit;
+    font-weight: 500;
+    border: 1px solid #ffffff;
+    font-size: 10px;
+    text-shadow: 1px 1px 2px #333333;
+}
+
+.dashboard-btns a:hover {
+    background: linear-gradient(#23A349,#97C671);
+}
+
+button:hover {
+    background: linear-gradient(#23A349, #97C671);
+}
+
+h3 {
+    border-bottom: 1px solid #ffffff;
+    padding-bottom: 5px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.benchmark-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-benchmark-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.benchmark-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(to right,#23A349, #97C671);
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin: 0 10px;
+    text-shadow: 1px 1px 5px #000000;
+}
+
+.section-header-dashboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 30px;
+}
+
+/* Add Workout Specifics */
+
+.label-add {
+    margin: 12px 0 0 0;
+}
+
+select {
+    /* -webkit-appearance: none; */
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    height: 25px;
+    width: 125px !important;
+    font-family: inherit;
+    font-weight: 400;
+    padding-left: 3px;
+    color: #333333;
+    font-size: 12px;
+    background-color: #ffffff;
+    margin-bottom: 10px !important;
+}
+
+.add-session-input {
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    max-height: 11px;
+    max-width: 111px;
+    font-family: inherit;
+    font-weight: 400;
+    padding-left: 7px;
+    color: #333333 !important;
+    font-size: 12px;
+    background-color: #ffffff;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+::placeholder {
+    color: #333333
+}
+
+.add-session-description {
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    height: 150px;
+    width: 200px;
+    font-family: inherit;
+    font-weight: 400;
+    padding-left: 7px;
+    color: #000000 !important;
+    font-size: 12px;
+    background-color: #ffffff;
+    text-align: left;
+    resize: none;
+}
+
+/* Add Benchmark Specifics */
+
+.add-benchmark-p {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    color: #7AC471;
+    margin-bottom: 0;
+    font-size: 15px;
+    margin-top: 17px;
+}
+
+/* .v-5-sections {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+} */
+
+/* .benchmark-select {
+    max-width: 50px;
+    margin: 0 2px;
+    margin-bottom: 20px;
+} */
+
+.save-banner-benchmark {
+    border: 1px solid #ffffff;
+    margin-top: 25px;
+}
+
+.save-banner-benchmark:hover {
+    background: linear-gradient(#23A349, #97C671);
+}
+
+.benchmark-btn {
+    background: linear-gradient(#23A349, #97C671);
+    border: none;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    font-family: inherit;
+    margin-top: 20px;
+    outline: none;
+}
+
+.benchmark-btn:hover {
+    background: linear-gradient(#97C671, #23A349);
+}
+
+
+/* View Workout Specifics */
+
+.delete-banner {
+    max-height: 35px;
+    background: linear-gradient(#c67171,#a32323);
+    font-size: 12px;
+    color: white;
+    border: none;
+    padding: 5px;
+    font-family: 'Montserrat', sans-serif;
+    width: 50%;
+
+}
+.update-banner {
+    max-height: 35px;
+    background: linear-gradient(#f8bb60,#c77b09);
+    font-size: 12px;
+    color: white;
+    border: none;
+    padding: 5px;
+    font-family: 'Montserrat', sans-serif;
+    width: 49%;
+}
+
+.delete-banner:hover {
+    background: linear-gradient(#a32323, #c67171);
+}
+
+.update-banner:hover {
+    background: linear-gradient(#c77b09,#f8bb60);
 }

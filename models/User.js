@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs')
 
 class User extends Model {
     // verify login per user
@@ -23,7 +23,6 @@ User.init(
         },
         email: {
             type: DataTypes.STRING,
-            allowNull: false,
             unique: true,
             validate: {
                 isEmail: true
@@ -35,7 +34,15 @@ User.init(
             validate: {
                 len: [4]
             }
-        }
+        },
+        // followed_users: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: true,
+        //     references: {
+        //         model: 'follow',
+        //         key: 'id'
+        //     }
+        // }
     },
     {
         hooks: {
