@@ -65,6 +65,10 @@ input {
     font-family: inherit;
 }
 
+.signin-input::placeholder{
+    color:#c3c3c3;
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus,
@@ -177,6 +181,7 @@ nav {
     margin: 20px;
     padding: 15px;
     border-radius: 3px;
+    text-shadow: 1px 1px 4px #333333;
 }
 
 .fa-lg:hover {
@@ -188,6 +193,8 @@ nav {
     background: none;
     color: #ffffff;
     outline: none;
+    text-shadow: 1px 1px 4px #333333;
+
 }
 
 .btn-no-style:hover {
@@ -212,7 +219,9 @@ section {
     justify-content: space-between;
     align-items: center;
     max-height: 30px;
+    min-height: 25px;
 }
+
 .username {
     text-decoration: none;
     padding: 6px 0;
@@ -249,7 +258,7 @@ a {
     text-shadow: 3px, 3px #000000;
 }
 
-/* Session View Specifics */
+/* Workout View Specifics */
 
 .session-content {
     text-align: center;
@@ -257,14 +266,15 @@ a {
     flex-direction: column;
     align-items: center;
 }
+
 .workout-input {
     margin: 10px 0 30px 0;
     width: 80%;
 }
 
-.date {
+/* .date {
     margin-top: 10px;
-}
+} */
 
 .session-span {
     font-weight: 300;
@@ -274,13 +284,21 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-height: 35px;
+    height: 35px;
     background: linear-gradient(#97C671,#23A349);
     font-size: 15px;
 }
 
 .save-banner:hover {
     background: linear-gradient(#23A349, #97C671);
+}
+
+.save-btn {
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 500;
+    text-shadow: 1px 1px 3px #333333;
+    outline: none;
 }
 
 .save-icon {
@@ -308,6 +326,10 @@ a {
     align-self: center;
 }
 
+.search-input::placeholder {
+    color: #c3c3c3;
+}
+
 .search-btn {
     margin-top: 0px;
 }
@@ -321,27 +343,22 @@ a {
 }
 
 .dashboard-btns a {
-    text-decoration: none;
-    color: white;
+    -webkit-appearance: none;
+    color: #ffffff;
     background: linear-gradient(#97C671,#23A349);
-    padding: 10px;
-    margin: 10px;
+    padding: 5px;
+    margin: 0 1px;
     border-radius: 5px;
+    outline: none;
+    font-family: inherit;
+    font-weight: 500;
+    border: 1px solid #ffffff;
+    font-size: 10px;
+    text-shadow: 1px 1px 2px #333333;
 }
 
 .dashboard-btns a:hover {
     background: linear-gradient(#23A349,#97C671);
-}
-
-.dashboard-btns {
-    -webkit-appearance: none;
-    color: #ffffff;
-    border-radius: 5px;
-    outline: none;
-    font-family: inherit;
-    font-size: 10px;
-    font-weight: 600;
-    margin: 0 1px;
 }
 
 button:hover {
@@ -377,7 +394,8 @@ h3 {
     background: linear-gradient(to right,#23A349, #97C671);
     font-weight: 600;
     letter-spacing: 2px;
-    margin: 0 10px;   
+    margin: 0 10px;
+    text-shadow: 1px 1px 5px #000000;
 }
 
 .section-header-dashboard {
@@ -387,7 +405,11 @@ h3 {
     min-height: 30px;
 }
 
-/* Add Session Specifics */
+/* Add Workout Specifics */
+
+.label-add {
+    margin: 12px 0 0 0;
+}
 
 select {
     /* -webkit-appearance: none; */
@@ -395,12 +417,14 @@ select {
     border: none;
     border-radius: 5px;
     height: 25px;
-    width: 125px;
+    width: 125px !important;
     font-family: inherit;
     font-weight: 400;
     padding-left: 3px;
-    color: #c3c3c3;
+    color: #333333;
     font-size: 12px;
+    background-color: #ffffff;
+    margin-bottom: 10px !important;
 }
 
 .add-session-input {
@@ -416,10 +440,11 @@ select {
     font-size: 12px;
     background-color: #ffffff;
     text-align: left;
+    margin-bottom: 10px;
 }
 
 ::placeholder {
-    color: #c3c3c3
+    color: #333333
 }
 
 .add-session-description {
@@ -431,7 +456,7 @@ select {
     font-family: inherit;
     font-weight: 400;
     padding-left: 7px;
-    color: #333333 !important;
+    color: #000000 !important;
     font-size: 12px;
     background-color: #ffffff;
     text-align: left;
@@ -444,24 +469,24 @@ select {
     text-align: center;
     font-size: 12px;
     font-weight: 500;
-    color: #4AB859;
+    color: #7AC471;
     margin-bottom: 0;
     font-size: 15px;
     margin-top: 17px;
 }
 
-.v-5-sections {
+/* .v-5-sections {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 50px;
-}
+} */
 
-.benchmark-select {
+/* .benchmark-select {
     max-width: 50px;
     margin: 0 2px;
     margin-bottom: 20px;
-}
+} */
 
 .save-banner-benchmark {
     border: 1px solid #ffffff;
@@ -472,16 +497,17 @@ select {
     background: linear-gradient(#23A349, #97C671);
 }
 
-
 .benchmark-btn {
     background: linear-gradient(#23A349, #97C671);
     border: none;
     padding: 10px;
     color: white;
     border-radius: 5px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: inherit;
     margin-top: 20px;
+    outline: none;
 }
+
 .benchmark-btn:hover {
     background: linear-gradient(#97C671, #23A349);
 }

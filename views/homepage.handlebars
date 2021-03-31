@@ -3,11 +3,11 @@
     <section>
       <div class="section-header">
         <div class="section-header-content">
-          <a href="/workout/{{workout.id}}" class="username">{{workout.user.username}}</a>
+          {{workout.user.username}}
           <em class="date">{{workout.date}}</em>
         </div>
       </div>
-      <a>
+      <a href="/workout/{{workout.id}}" class="username">
         <div class="section-body">
           <p>{{workout.category}} | <em>{{workout.time}} minutes</em> | {{workout.level}}</p>
         </div>
