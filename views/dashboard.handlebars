@@ -23,7 +23,7 @@
     {{#each workouts as |workout|}}
     <section>
       <div class="section-header">
-        <div class="section-header-content">
+        <div class="section-header-dashboard">
           <em class="date">{{workout.date}}</em>
         </div>
       </div>
@@ -32,9 +32,9 @@
           <p>{{workout.category}} | <em>{{workout.time}} minutes</em> | {{workout.level}}</p>
         </div>
       </a>
-      <div>
+      <div class="banner-btns">
+        <button id="update-workout" type="click" class="update-banner">Update Workout</button>
         <button id="delete-workout" type="click" class="delete-banner">Delete Workout</button>
-        <button id="update-workout" type="submit" class="update-banner">Update Workout</button>
       </div>
     </section>
     {{/each}}
