@@ -3,8 +3,11 @@
     <a href="/dashboard/add">Add Workout</a>
     {{#if benchmarks}}
     <a href="/dashboard/updatebenchmark">Update Benchmark</a>
-    {{else}}
+    {{/if}}
+    {{#if workouts}}
+    {{#unless benchmarks}}
     <a href="/dashboard/addbenchmark">Add Benchmark</a>
+    {{/unless}}
     {{/if}}
     <a>Saved Workouts</a>
 </div>
