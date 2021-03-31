@@ -47,9 +47,9 @@ app.get('/', function(req, res){ res.render('homepage');
 });
 //app set port??
 app.set('port', (process.env.PORT));
-app.listen(app.get('port'), function(){
-  console.log('server started on port');
-});
+// app.listen(app.get('port'), function(){
+//   console.log('server started on port');
+// });
 
 // turn on connection to db and server
 sequelize.sync({ force: false }).then(() => {
