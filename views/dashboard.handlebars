@@ -32,6 +32,11 @@
           <p>{{workout.category}} | <em>{{workout.time}} minutes</em> | {{workout.level}}</p>
         </div>
       </a>
+      <div>
+        <button id="delete-workout" type="click" class="delete-banner">Delete Workout</button>
+        <button id="update-workout" type="submit" class="update-banner">Update Workout</button>
+      </div>
     </section>
     {{/each}}
   </main>
+  <script src="/js/delete-workout.js"></script>
