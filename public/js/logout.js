@@ -11,6 +11,4 @@ async function logout() {
     }
 }
   
-if (loggedIn) {
-  document.querySelector('#logout').addEventListener('click', logout);
-}
+document.querySelector('#logout').addEventListener('click', logout);
