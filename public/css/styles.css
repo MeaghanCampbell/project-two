@@ -305,10 +305,10 @@ a {
     padding: 1px 4px 0 0;
 }
 
-.section-header-dashboard {
+/* .section-header-dashboard {
     display: flex;
     justify-content: space-between;
-}
+} */
 
 /* Search Page Specifics */
 
@@ -402,7 +402,45 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 30px;
+    min-height: 25px;
+}
+
+.banner-btns {
+    display: flex;
+    align-items:center;
+    justify-content: end;
+}
+
+.delete-banner {
+    max-height: 35px;
+    background: linear-gradient(#c67171,#a32323);
+    font-size: 12px;
+    color: white;
+    border: none;
+    padding: 5px;
+    font-family: 'Montserrat', sans-serif;
+    width: 50%;
+    text-shadow: 1px 1px 2px #333333;
+}
+
+.delete-banner:hover {
+    background: linear-gradient(#a32323, #c67171);
+}
+
+.update-banner {
+    max-height: 35px;
+    background: linear-gradient(#f8bb60,#c77b09);
+    font-size: 12px;
+    color: white;
+    border: none;
+    padding: 5px;
+    font-family: 'Montserrat', sans-serif;
+    width: 50%;
+    text-shadow: 1px 1px 2px #333333;
+}
+
+.update-banner:hover {
+    background: linear-gradient(#c77b09,#f8bb60);
 }
 
 /* Add Workout Specifics */
@@ -512,35 +550,3 @@ select {
     background: linear-gradient(#97C671, #23A349);
 }
 
-
-/* View Workout Specifics */
-
-.delete-banner {
-    max-height: 35px;
-    background: linear-gradient(#c67171,#a32323);
-    font-size: 12px;
-    color: white;
-    border: none;
-    padding: 5px;
-    font-family: 'Montserrat', sans-serif;
-    width: 50%;
-
-}
-.update-banner {
-    max-height: 35px;
-    background: linear-gradient(#f8bb60,#c77b09);
-    font-size: 12px;
-    color: white;
-    border: none;
-    padding: 5px;
-    font-family: 'Montserrat', sans-serif;
-    width: 49%;
-}
-
-.delete-banner:hover {
-    background: linear-gradient(#a32323, #c67171);
-}
-
-.update-banner:hover {
-    background: linear-gradient(#c77b09,#f8bb60);
-}
