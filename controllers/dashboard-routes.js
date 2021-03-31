@@ -35,7 +35,6 @@ router.get('/', (req, res) => {
     .then(dbWorkoutData => {
         const workouts = dbWorkoutData.map(workout => workout.get({ plain: true }));
         if (workouts[0]) {
-            const workouts = dbWorkoutData.map(workout => workout.get({ plain: true }));
             const benchmarks = workouts[0].user.benchmark
             res.render('dashboard', { workouts, benchmarks, loggedIn: true });
         } else {
