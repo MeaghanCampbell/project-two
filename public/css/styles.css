@@ -25,6 +25,7 @@ header img {
 h1 {
     letter-spacing: 3px;
     font-weight: 500;
+    text-shadow: 3px 3px 3px #000000;
 }
 
 em {
@@ -34,6 +35,7 @@ em {
 h4 {
     font-weight: 100;
     margin-top: 0px;
+    text-shadow: 2px 2px 2px #000000;
 }
 
 h6 {
@@ -76,7 +78,6 @@ select:-webkit-autofill:focus {
     -webkit-text-fill-color: #c3c3c3;
     -webkit-box-shadow: 0 0 0px 1000px #000000 inset;
     font-family: inherit;
-
 }
 
 input:hover {
@@ -84,7 +85,7 @@ input:hover {
     color: #ffffff;
 }
 
-.login-btn, .signup-btn, .search-btn /* search-btn on search.handlebars */ {
+.login-btn, .search-btn, .google-btn /* search-btn on search.handlebars */ {
     font-size: 10px;
     padding: 5px 10px;
     margin: 15px;
@@ -96,6 +97,36 @@ input:hover {
     outline: none;
     font-family: inherit;
     font-weight: 400;
+    text-shadow: 1px 1px 2px #333333;
+
+}
+
+.google-btn {
+    margin: 0px 0px 5px;
+}
+
+.fa-google {
+    padding-right: 5px;
+    /* background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    position: relative; */
+}
+
+/* .fa-google::after {
+    background: none;
+    content: attr(data-text);
+    left: 0;
+    position: absolute;
+    text-shadow: 1px 1px 2px #333333;
+    top: 0;
+    z-index: -1;
+} */
+
+.nav-link {
+    color: #ffffff;
 }
 
 .signup-instead, .login-instead {
@@ -103,6 +134,7 @@ input:hover {
     color: white;
     margin-top: 15px 0;
     font-size: 10px;
+    text-shadow: 2px 2px 3px #000000;
 }
 
 .signup-instead:hover, .login-instead:hover {
@@ -119,9 +151,6 @@ form {
     text-align: center;
 }
 
-.nav-link {
-    color: white;
-}
 
 footer {
     display: flex;
@@ -151,7 +180,7 @@ nav {
 }
 
 .fa-lg:hover {
-    color: #cccccc;
+    color: #c3c3c3;
 }
 
 .btn-no-style {
