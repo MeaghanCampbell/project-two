@@ -1,21 +1,24 @@
 
 <div class="dashboard-btns">
     <a href="/dashboard/add">Add Workout</a>
+    {{#if workouts}}
     {{#if benchmarks}}
     <a href="/dashboard/updatebenchmark">Update Benchmark</a>
     {{else}}
     <a href="/dashboard/addbenchmark">Add Benchmark</a>
     {{/if}}
+    {{/if}}
     <a>Saved Workouts</a>
 </div>
 
   <main>
+    {{#if benchmarks}}
     <h3>Your Benchmarks</h2>
     <div class="benchmark-section">
-
       <div class="benchmark-circle">{{benchmarks.route_grade}}</div>
       <div class="benchmark-circle">V{{benchmarks.boulder_grade}}</div>
     </div>
+    {{/if}}
     <h3>Your Workouts</h2>
     {{#each workouts as |workout|}}
     <section>

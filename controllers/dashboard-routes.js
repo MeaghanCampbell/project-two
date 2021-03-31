@@ -22,9 +22,9 @@ router.get('/', (req, res) => {
                 model: User,
                 attributes: ['username'],
                 include: {
-                   model: Benchmark,
+                model: Benchmark,
                     attributes: ['boulder_grade', 'route_grade']
-                 }
+                }
             },
             {
                 model: User,
@@ -35,17 +35,16 @@ router.get('/', (req, res) => {
     .then(dbWorkoutData => {
         const workouts = dbWorkoutData.map(workout => workout.get({ plain: true }));
         if (workouts[0]) {
-            const workouts = dbWorkoutData.map(workout => workout.get({ plain: true }));
             const benchmarks = workouts[0].user.benchmark
             res.render('dashboard', { workouts, benchmarks, loggedIn: true });
         } else {
             res.render('dashboard', { loggedIn: true });
         }
-      })
-      .catch(err => {
+    })
+    .catch(err => {
         console.log(err);
         res.status(500).json(err);
-      });
+    });
 });
 
 
