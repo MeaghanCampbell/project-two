@@ -52,7 +52,7 @@ main {
     text-align: center;
 }
 
-input {
+.signin-input {
     text-align: center;
     border-radius: 8px;
     color: #333333;
@@ -361,9 +361,9 @@ a {
     background: linear-gradient(#23A349,#97C671);
 }
 
-button:hover {
+/* button:hover {
     background: linear-gradient(#23A349, #97C671);
-}
+} */
 
 h3 {
     border-bottom: 1px solid #ffffff;
@@ -421,6 +421,7 @@ h3 {
     font-family: 'Montserrat', sans-serif;
     width: 50%;
     text-shadow: 1px 1px 2px #333333;
+    outline: none;
 }
 
 .delete-banner:hover {
@@ -437,6 +438,7 @@ h3 {
     font-family: 'Montserrat', sans-serif;
     width: 50%;
     text-shadow: 1px 1px 2px #333333;
+    outline: none;
 }
 
 .update-banner:hover {
@@ -469,7 +471,7 @@ select {
     outline: none;
     border: none;
     border-radius: 5px;
-    max-height: 11px;
+    height: 23px;
     max-width: 111px;
     font-family: inherit;
     font-weight: 400;
@@ -483,6 +485,23 @@ select {
 
 ::placeholder {
     color: #333333
+}
+
+.add-session-input:-webkit-autofill,
+.add-session-input:-webkit-autofill:hover, 
+.add-session-input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-text-fill-color: #333333;
+    border: none;
+    color: #333333;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0 0 0px 1000px #ffffff inset;
+    font-family: inherit;
 }
 
 .add-session-description {
@@ -511,6 +530,19 @@ select {
     margin-bottom: 0;
     font-size: 15px;
     margin-top: 17px;
+}
+
+.grade-input {
+    text-align: center;
+    border-radius: 8px;
+    color: #333333;
+    background-color: #000000;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 7px;
+    border: 1px solid #23A349;
+    outline: none;
+    font-family: inherit;
 }
 
 /* .v-5-sections {
