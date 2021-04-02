@@ -311,11 +311,6 @@ a {
     padding: 1px 4px 0 0;
 }
 
-/* .section-header-dashboard {
-    display: flex;
-    justify-content: space-between;
-} */
-
 /* Search Page Specifics */
 
 .search-input-container {
@@ -366,10 +361,6 @@ a {
 .dashboard-btns a:hover {
     background: linear-gradient(#23A349,#97C671);
 }
-
-/* button:hover {
-    background: linear-gradient(#23A349, #97C671);
-} */
 
 h3 {
     border-bottom: 1px solid #ffffff;
@@ -458,7 +449,6 @@ h3 {
 }
 
 select {
-    /* -webkit-appearance: none; */
     outline: none;
     border: none;
     border-radius: 5px;
@@ -552,19 +542,6 @@ select:-webkit-autofill:focus {
     font-family: inherit;
 }
 
-/* .v-5-sections {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 50px;
-} */
-
-/* .benchmark-select {
-    max-width: 50px;
-    margin: 0 2px;
-    margin-bottom: 20px;
-} */
-
 .save-banner-benchmark {
     border: 1px solid #ffffff;
     margin-top: 25px;
@@ -606,6 +583,7 @@ select:-webkit-autofill:focus {
         justify-content: center;
         background-image: url("../images/rock.jpg");
     }
+
     .window {
         background: rgba(0, 0, 0, 0.8);
         align-self: center;
@@ -615,34 +593,44 @@ select:-webkit-autofill:focus {
         overflow: scroll;
         padding: 20px;
     }
+
     p, em, a, span, button {
         font-size: large;
     }
+
     em {
         font-weight: 300;
     }
+
     input {
         font-size: 15px;
     }
+
     /* Login & Sign up */
     .login-window {
         padding-top: 100px;
     }
+
     h1, .fit {
         font-size: 80px;
     }
+
     h4 {
         font-size: 30px;
     }
+
     .login-btn, .search-btn, .google-btn {
         font-size: 15px;
     }
+
     .google-btn {
         margin-bottom: 15px;
     }
+
     .signup-instead, .login-instead {
         font-size: 15px;
     }
+
     /* Nav */
     nav {
         padding: 15px 40px;
@@ -650,85 +638,106 @@ select:-webkit-autofill:focus {
     .fa-lg {
         font-size: 32px;
     }
+
     /* Home Dashboard & Search Display*/
     .section-header-dashboard {
         min-height: 30px;
     }
+
     section {
         margin: 40px 0 30px;
     }
+
     .section-body {
         background-color: #000000;
         padding: 8px;
     }
+
     h3 {
         font-size: 25px;
     }
+
     /* Dashboard Specifics */
     .benchmark-circle {
         width: 120px;
         height: 120px;
         font-size: 30px;
     }
+
     .dashboard-btn {
         font-size: 17px !important;
         margin: 0 5px !important;
     }
+
     .update-banner, .delete-banner {
         padding-top: 10px 0 10px;
         height: 45px !important;
         font-size: 18px;
         font-weight: 500;
     }
+
     /* Add/Update Benchmark Specifics */
     .add-benchmark-p {
         font-size: 20px;
     }
+
     .input-lrg {
         font-size: 20px;
     }
+
     /* Add Workout Specifics */
     label {
         font-size: 20px;
     }
+
     select {
         font-size: 20px;
         width: 350px !important;
         height: 40px;
     }
+
     .add-session-input {
         font-size: 20px;
         width: 341px;
         height: 38px;
     }
+
     .add-session-description {
         font-size: 20px;
         width: 341px;
     }
+
     /* Search Specifics */
     .search-input {
         font-size: 20px;
     }
+
     .search-btn {
         font-size: 18px;
         margin-bottom: 0;
     }
+
     /* Single View Specifics */
     .lrg-screen-header {
         height: 40px;
     }
+
     .lrg-header-content {
         padding-top: 6px;
     }
+
     .workout-lrg-screen {
         font-size: 22px;
     }
+
     .description-header {
         margin-bottom: 10px;
     }
+
     .save-banner-lrg {
         height: 50px;
     }
+
     .save-btn {
         font-size: 22px;
         font-weight: 600;
@@ -742,6 +751,7 @@ select:-webkit-autofill:focus {
     body {
         background: radial-gradient(#333333, #000000);
     }
+
     .login-main, .signup-main {
         padding-top: 105px;
     }
