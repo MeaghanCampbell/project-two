@@ -136,6 +136,10 @@ input:hover {
     color: #ffffff;
 }
 
+.fa-lg {
+    font-size: 22px;
+}
+
 .signup-instead, .login-instead {
     text-decoration: none;
     color: white;
@@ -643,7 +647,7 @@ select:-webkit-autofill:focus {
     nav {
         padding: 15px 40px;
     }
-    .nav-link, .fa-lg {
+    .fa-lg {
         font-size: 32px;
     }
     /* Home Dashboard & Search Display*/

@@ -3,12 +3,12 @@
 
     <form id="update-benchmark-form" class="add-benchmark-section">
         <label class="add-benchmark-p">Boulder Grade (on V scale)</label>
-        <input id="boulder-grade" class="signin-input boulder-grade" type="text" name="boulder-grade" />
+        <input id="boulder-grade" class="signin-input boulder-grade" type="text" name="boulder-grade" placeholder={{benchmarks.route_grade}} />
 
         <label class="add-benchmark-p">Route Grade</label>
-        <input id="route-grade" class="signin-input route-grade" type="text" name="route-grade" />
+        <input id="route-grade" class="signin-input route-grade" type="text" name="route-grade" placeholder={{benchmarks.boulder_grade}} />
 
-        <button type="click" id="benchmark" class="benchmark-btn save-btn"><i class="fas fa-bookmark save-icon"></i>SAVE YOUR BENCHMARK</button>
+        <button type="click" id="benchmark" class="benchmark-btn save-btn" value={{benchmark.id}}><i class="fas fa-bookmark save-icon"></i>SAVE YOUR BENCHMARK</button>
     </form>
     <script src="/js/update-benchmark.js"></script>
 </main>
