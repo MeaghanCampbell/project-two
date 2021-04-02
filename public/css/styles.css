@@ -7,7 +7,6 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    /* background: radial-gradient(#333333, #000000); */
     background-attachment: fixed;
     background-repeat: no-repeat;
     font-family: 'Montserrat', sans-serif;
@@ -49,7 +48,6 @@ main {
 }
 
 .login-main, .signup-main {
-    padding-top: 105px;
     text-align: center;
 }
 
@@ -150,17 +148,11 @@ input:hover {
     color: #23A349;
 }
 
-/* .signup-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-} */
-
 form {
     text-align: center;
 }
 
-footer {
+/* footer {
     display: flex;
     justify-content: end;
     bottom: 0;
@@ -173,7 +165,7 @@ footer img {
     background-repeat: no-repeat;
     background-size: cover;
     margin-bottom: none;
-}
+} */
 
 /* Homescreen Specifics */
 
@@ -209,7 +201,7 @@ section {
     font-size: 12px;
     font-weight: 600;
     border: 1px solid #ffffff;
-    margin-bottom: 20px;
+    margin: 10px 0 20px;
 }
 
 .section-header {
@@ -241,6 +233,11 @@ section {
     color: white;
 }
 
+.section-body:hover {
+    background: linear-gradient(#97C671,#23A349);
+    text-shadow: 3px, 3px #000000;
+}
+
 a {
     text-decoration: none;
 }
@@ -257,11 +254,6 @@ a {
     font-family: 'Montserrat', sans-serif;
 }
 
-.section-body:hover {
-    background: linear-gradient(#97C671,#23A349);
-    text-shadow: 3px, 3px #000000;
-}
-
 /* Workout View Specifics */
 
 .session-content {
@@ -275,10 +267,6 @@ a {
     margin: 10px 0 30px 0;
     width: 80%;
 }
-
-/* .date {
-    margin-top: 10px;
-} */
 
 .session-span {
     font-weight: 300;
@@ -524,7 +512,7 @@ select:-webkit-autofill:focus {
     border: none;
     border-radius: 5px;
     height: 146px;
-    width: 241px;
+    width: 191px;
     font-family: inherit;
     font-weight: 400;
     padding-left: 7px;
@@ -663,7 +651,7 @@ select:-webkit-autofill:focus {
         min-height: 30px;
     }
     section {
-        margin: 0 0 30px;
+        margin: 40px 0 30px;
     }
     .section-body {
         background-color: #000000;
@@ -715,6 +703,7 @@ select:-webkit-autofill:focus {
     }
     .search-btn {
         font-size: 18px;
+        margin-bottom: 0;
     }
     /* Single View Specifics */
     .lrg-screen-header {
@@ -744,6 +733,9 @@ select:-webkit-autofill:focus {
 @media all and (max-width: 768px) { 
     body {
         background: radial-gradient(#333333, #000000);
+    }
+    .login-main, .signup-main {
+        padding-top: 105px;
     }
 }
 
