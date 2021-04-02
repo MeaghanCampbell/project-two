@@ -7,7 +7,7 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background: radial-gradient(#333333, #000000);
+    /* background: radial-gradient(#333333, #000000); */
     background-attachment: fixed;
     background-repeat: no-repeat;
     font-family: 'Montserrat', sans-serif;
@@ -55,7 +55,7 @@ main {
 .signin-input {
     text-align: center;
     border-radius: 8px;
-    color: #333333;
+    color: #c3c3c3;
     background-color: #000000;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -81,6 +81,7 @@ select:-webkit-autofill:focus {
     border: 1px solid #23A349;
     -webkit-text-fill-color: #c3c3c3;
     -webkit-box-shadow: 0 0 0px 1000px #000000 inset;
+    box-shadow: 0 0 0px 1000px #000000 inset;
     font-family: inherit;
 }
 
@@ -280,6 +281,16 @@ a {
     font-weight: 300;
 }
 
+.description-header {
+    margin: 12px 0 5px;
+}
+
+.description {
+    white-space: pre-line;
+    width: 80%;
+    margin-bottom: 12px;
+}
+
 .save-banner {
     display: flex;
     justify-content: center;
@@ -472,7 +483,7 @@ select {
     border: none;
     border-radius: 5px;
     height: 23px;
-    max-width: 111px;
+    width: 116px;
     font-family: inherit;
     font-weight: 400;
     padding-left: 7px;
@@ -501,6 +512,7 @@ select:-webkit-autofill:focus {
     color: #333333;
     background-color: #ffffff;
     -webkit-box-shadow: 0 0 0px 1000px #ffffff inset;
+    box-shadow: 0 0 0px 1000px #ffffff inset;
     font-family: inherit;
 }
 
@@ -508,8 +520,8 @@ select:-webkit-autofill:focus {
     outline: none;
     border: none;
     border-radius: 5px;
-    height: 150px;
-    width: 200px;
+    height: 146px;
+    width: 241px;
     font-family: inherit;
     font-weight: 400;
     padding-left: 7px;
@@ -582,3 +594,148 @@ select:-webkit-autofill:focus {
     background: linear-gradient(#97C671, #23A349);
 }
 
+/* Media Queries */
+
+@media all and (min-width: 768px) {
+    body {
+        position: fixed; 
+        top: 0; 
+        left: 0; 
+        min-width: 100%;
+        min-height: 100%;
+        margin: 0;
+        min-height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: url("../images/rock.jpg");
+    }
+    .login-window {
+        padding-top: 100px;
+    }
+    .window {
+        /* background: radial-gradient(#333333, #000000); */
+        background: rgba(0, 0, 0, 0.8);
+        align-self: center;
+        width: 800px;
+        height: 800px;
+        border-radius: 15px;
+        overflow: scroll;
+        padding: 20px;
+    }
+    h1, .fit {
+        font-size: 80px;
+    }
+    h4 {
+        font-size: 30px;
+    }
+    .google-btn {
+        margin-bottom: 15px;
+    }
+    .signup-instead, .login-instead {
+        font-size: 15px;
+    }
+    nav {
+        padding: 15px 40px;
+    }
+    .nav-link, .fa-lg {
+        font-size: 28px;
+    }
+    .section-header-dashboard {
+        min-height: 30px;
+    }
+    section {
+        margin: 30px 0;
+    }
+    .section-body {
+        background-color: #000000;
+        padding: 8px;
+    }
+    p, em, a, span, button {
+        font-size: large;
+    }
+    .login-btn, .search-btn, .google-btn {
+        font-size: 15px;
+    }
+    input {
+        font-size: 15px;
+    }
+    .benchmark-circle {
+        width: 120px;
+        height: 120px;
+        font-size: 30px;
+    }
+    h3 {
+        font-size: 25px;
+    }
+    .dashboard-btn {
+        font-size: 17px !important;
+        margin: 0 5px !important;
+    }
+    .update-banner, .delete-banner {
+        padding-top: 10px 0 10px;
+        height: 45px !important;
+        font-size: 18px;
+        font-weight: 500;
+    }
+    .add-benchmark-p {
+        font-size: 20px;
+    }
+    .save-btn {
+        font-size: 18px;
+        font-weight: 600;
+    }
+    label {
+        font-size: 18px;
+    }
+    select {
+        font-size: 15px;
+        width: 300px !important;
+        height: 35px;
+    }
+    .add-session-input {
+        font-size: 15px;
+        width: 291px;
+        height: 33px;
+    }
+    .add-session-description {
+        font-size: 15px;
+        width: 291px;
+    }
+    .search-input {
+        font-size: 20px;
+    }
+}
+
+/* @media all and (min-width: 768px) and (max-width: 1024px) {
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        background-image: url("../images/rock.jpg");
+    }
+    .window {
+        background: rgba(0, 0, 0, 0.8);
+        align-self: center;
+        width: 800px;
+        height: 800px;
+        border-radius: 15px;
+    }
+    .section-body {
+        background-color: #000000;
+    }
+} */
+
+@media all and (max-width: 768px) { 
+    body {
+        background: radial-gradient(#333333, #000000);
+    }
+
+}
+
+/* @media all and (max-width: 480px) {
+    body {
+        background: radial-gradient(#333333, #000000);
+    }
+} */
