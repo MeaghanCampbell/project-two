@@ -680,7 +680,11 @@ select:-webkit-autofill:focus {
         font-size: 18px;
         font-weight: 500;
     }
+    /* Add/Update Benchmark Specifics */
     .add-benchmark-p {
+        font-size: 20px;
+    }
+    .input-lrg {
         font-size: 20px;
     }
     /* Add Workout Specifics */
