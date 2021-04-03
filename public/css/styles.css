@@ -43,7 +43,6 @@ h6 {
 
 main {
     width: 80%;
-    height: 482px;
     margin: auto;
     color: #ffffff;
 }
@@ -245,7 +244,8 @@ section {
 }
 
 .section-body:hover {
-    background: linear-gradient(#97C671,#23A349);
+    /* background: linear-gradient(#97C671,#23A349); */
+    /* background-color: rgba(74,184,89,1.0) !important; */
     text-shadow: 3px, 3px #000000;
 }
 
@@ -315,7 +315,8 @@ a {
 }
 
 .save-icon {
-    padding: 1px 4px 0 0;
+    padding: 1px 7px 0 0;
+    font-size: 15px;
 }
 
 /* Search Page Specifics */
@@ -588,21 +589,24 @@ select:-webkit-autofill:focus {
         display: flex;
         align-items: center;
         justify-content: center;
-        background-image: url("../images/rock.jpg");
+        background-image: url("../images/rock3.jpg");
     }
 
     .window {
-        background: rgba(0, 0, 0, 0.8);
-        align-self: center;
+        background: rgba(0, 0, 0, 0.4);
         width: 50vw;
         height: 80vh;
         border-radius: 15px;
         overflow: scroll;
-        padding: 20px;
+        
+    }
+
+    ::-webkit-scrollbar {
+        display: none;
     }
 
     p, em, a, span, button {
-        font-size: large;
+        font-size: 20px;
     }
 
     em {
@@ -648,34 +652,37 @@ select:-webkit-autofill:focus {
         font-size: 32px;
     }
 
-    /* Home Dashboard & Search Display*/
+    /* Home, Dashboard & Search Display*/
+    section {
+        margin: 40px 0;
+    }
+
     .section-header-dashboard {
         min-height: 30px;
     }
 
-    section {
-        margin: 40px 0 30px;
-    }
-
     .section-body {
-        background-color: #000000;
+        /* background: radial-gradient(#333333, #000000); */
         padding: 8px;
     }
 
+    .section-body:hover {
+        background-color: rgba(74,184,89,0.5) !important;
+    }
+
     h3 {
-        font-size: 25px;
+        font-size: 30px;
     }
 
     /* Dashboard Specifics */
+        .dashboard-btn {
+        font-size: 17px !important;
+        margin: 0 5px !important;
+    }
     .benchmark-circle {
         width: 120px;
         height: 120px;
         font-size: 30px;
-    }
-
-    .dashboard-btn {
-        font-size: 17px !important;
-        margin: 0 5px !important;
     }
 
     .update-banner, .delete-banner {
@@ -692,6 +699,7 @@ select:-webkit-autofill:focus {
 
     .input-lrg {
         font-size: 20px;
+        width: 251.96px;
     }
 
     /* Add Workout Specifics */
@@ -713,7 +721,8 @@ select:-webkit-autofill:focus {
 
     .add-session-description {
         font-size: 20px;
-        width: 341px;
+        padding: 7px;
+        width: 336px;
     }
 
     /* Search Specifics */
@@ -748,8 +757,14 @@ select:-webkit-autofill:focus {
     }
 
     .save-btn {
-        font-size: 22px;
+        font-size: 18px;
         font-weight: 600;
+        padding: 8px 20px;
+    }
+
+    /* Single Workout Specifics */
+    .save-icon {
+        font-size: 18px;
     }
 }
 
