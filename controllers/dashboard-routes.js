@@ -86,4 +86,34 @@ router.get('/updatebenchmark/:id', (req, res) => {
       });
 })
 
+router.get('/updateworkout/:id', (req, res) => {
+    Workout.findOne({
+        where: {
+            id: req.params.id
+        },
+        attributes: ['id', 'date', 'category', 'time', 'level', 'description'],
+        include: [
+            {
+                model: User,
+                attributes: ['username']
+            }
+        ]
+    })
+    .then(dbWorkoutData => {
+        if (dbWorkoutData) {
+          const workout = dbWorkoutData.get({ plain: true });
+          
+          res.render('update-workout', {
+            workout,
+            loggedIn: true
+          });
+        } else {
+          res.status(404).end();
+        }
+      })
+      .catch(err => {
+        res.status(500).json(err);
+      });
+})
+
 module.exports = router
