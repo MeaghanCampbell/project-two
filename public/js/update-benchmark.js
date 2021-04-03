@@ -3,8 +3,9 @@ async function editBenchmarkHandler(event) {
   
   const boulder_grade = document.querySelector('#boulder-grade').value.trim();
   const route_grade = document.querySelector('#route-grade').value.trim();
-  const id = document.querySelector('#route-grade').getAttribute('data-index');
-        
+  const id = window.location.toString().split('/')[
+    window.location.toString().split('/').length - 1
+  ];        
     const response = await fetch(`/api/benchmarks/${id}`, {
       method: 'PUT',
       body: JSON.stringify({

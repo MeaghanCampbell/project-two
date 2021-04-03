@@ -56,26 +56,34 @@ router.get('/addbenchmark', (req, res) => {
     res.render('add-benchmark', { loggedIn: true })
 })
 
-router.get('/updatebenchmark', (req, res) => {
-    User.findOne({
+router.get('/updatebenchmark/:id', (req, res) => {
+    Benchmark.findOne({
         where: {
-            id: req.session.user_id
+            id: req.params.id
         },
+        attributes: ['id', 'boulder_grade', 'route_grade'],
         include: [
             {
-                model: Benchmark,
-                    attributes: ['boulder_grade', 'route_grade', 'id']
-            }        
+                model: User,
+                attributes: ['username']
+            }
         ]
     })
-    .then(dbWorkoutData => {
-        const benchmarks = dbWorkoutData.benchmark.dataValues;
-        res.render('update-benchmark', { benchmarks, loggedIn: true })
-    })
-    .catch(err => {
-        console.log(err);
+    .then(dbBenchmarkData => {
+        if (dbBenchmarkData) {
+          const benchmark = dbBenchmarkData.get({ plain: true });
+          
+          res.render('update-benchmark', {
+            benchmark,
+            loggedIn: true
+          });
+        } else {
+          res.status(404).end();
+        }
+      })
+      .catch(err => {
         res.status(500).json(err);
-    });
+      });
 })
 
 module.exports = router
