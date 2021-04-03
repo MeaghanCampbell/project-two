@@ -43,12 +43,19 @@ h6 {
 
 main {
     width: 80%;
+    height: 482px;
     margin: auto;
     color: #ffffff;
 }
 
 .login-main, .signup-main {
     text-align: center;
+}
+
+.login-window {
+    display: flex;
+    align-items: center;
+    height: 100vh;
 }
 
 .signin-input {
@@ -608,7 +615,9 @@ select:-webkit-autofill:focus {
 
     /* Login & Sign up */
     .login-window {
-        padding-top: 100px;
+        display: flex;
+        align-items: center;
+        height: 70vh;
     }
 
     h1, .fit {
@@ -745,26 +754,8 @@ select:-webkit-autofill:focus {
 }
 
 /* @media all and (min-width: 768px) and (max-width: 1024px) {
-    body {
-        position: relative; 
-        min-width: 100%;
-        min-height: 100%;
-        margin: 0;
-        min-height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-image: url("../images/rock.jpg");
-    }
-
-    .window {
-        background: rgba(0, 0, 0, 0.8);
-        align-self: center;
-        width: 500px;
-        height: 500px;
-        border-radius: 15px;
-        overflow: scroll;
-        padding: 20px;
+    .login-window {
+        padding-top: none;
     }
 } */
 
