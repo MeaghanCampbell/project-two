@@ -244,7 +244,8 @@ section {
 }
 
 .section-body:hover {
-    background: linear-gradient(#97C671,#23A349);
+    /* background: linear-gradient(#97C671,#23A349); */
+    /* background-color: rgba(74,184,89,1.0) !important; */
     text-shadow: 3px, 3px #000000;
 }
 
@@ -663,6 +664,10 @@ select:-webkit-autofill:focus {
     .section-body {
         /* background: radial-gradient(#333333, #000000); */
         padding: 8px;
+    }
+
+    .section-body:hover {
+        background-color: rgba(74,184,89,0.5) !important;
     }
 
     h3 {
