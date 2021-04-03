@@ -361,7 +361,7 @@ a {
     font-family: inherit;
     font-weight: 500;
     border: 1px solid #ffffff;
-    font-size: 10px;
+    font-size: 1.4vh;
     text-shadow: 1px 1px 2px #333333;
 }
 
@@ -575,7 +575,7 @@ select:-webkit-autofill:focus {
 
 /* Media Queries */
 
-@media all and (min-width: 769px) {
+@media all and (min-width: 770px) {
     /* General Large Screen */
     body {
         position: fixed; 
@@ -759,7 +759,7 @@ select:-webkit-autofill:focus {
     }
 } */
 
-@media all and (max-width: 768px) { 
+@media all and (max-width: 769px) { 
     body {
         background: radial-gradient(#333333, #000000);
     }
