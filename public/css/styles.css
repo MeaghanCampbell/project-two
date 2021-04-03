@@ -568,7 +568,7 @@ select:-webkit-autofill:focus {
 
 /* Media Queries */
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 769px) {
     /* General Large Screen */
     body {
         position: fixed; 
@@ -587,8 +587,8 @@ select:-webkit-autofill:focus {
     .window {
         background: rgba(0, 0, 0, 0.8);
         align-self: center;
-        width: 800px;
-        height: 800px;
+        width: 50vw;
+        height: 80vh;
         border-radius: 15px;
         overflow: scroll;
         padding: 20px;
@@ -745,6 +745,27 @@ select:-webkit-autofill:focus {
 }
 
 /* @media all and (min-width: 768px) and (max-width: 1024px) {
+    body {
+        position: relative; 
+        min-width: 100%;
+        min-height: 100%;
+        margin: 0;
+        min-height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: url("../images/rock.jpg");
+    }
+
+    .window {
+        background: rgba(0, 0, 0, 0.8);
+        align-self: center;
+        width: 500px;
+        height: 500px;
+        border-radius: 15px;
+        overflow: scroll;
+        padding: 20px;
+    }
 } */
 
 @media all and (max-width: 768px) { 
