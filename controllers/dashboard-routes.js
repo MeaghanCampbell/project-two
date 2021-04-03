@@ -23,7 +23,7 @@ router.get('/', (req, res) => {
                 attributes: ['username'],
                 include: {
                 model: Benchmark,
-                    attributes: ['boulder_grade', 'route_grade']
+                    attributes: ['boulder_grade', 'route_grade', 'id']
                 }
             },
             {
@@ -57,8 +57,25 @@ router.get('/addbenchmark', (req, res) => {
 })
 
 router.get('/updatebenchmark', (req, res) => {
-    res.render('update-benchmark', { loggedIn: true })
+    User.findOne({
+        where: {
+            id: req.session.user_id
+        },
+        include: [
+            {
+                model: Benchmark,
+                    attributes: ['boulder_grade', 'route_grade', 'id']
+            }        
+        ]
+    })
+    .then(dbWorkoutData => {
+        const benchmarks = dbWorkoutData.benchmark.dataValues;
+        res.render('update-benchmark', { benchmarks, loggedIn: true })
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 })
-
 
 module.exports = router
