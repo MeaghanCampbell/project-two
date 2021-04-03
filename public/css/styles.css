@@ -314,7 +314,8 @@ a {
 }
 
 .save-icon {
-    padding: 1px 4px 0 0;
+    padding: 1px 7px 0 0;
+    font-size: 15px;
 }
 
 /* Search Page Specifics */
@@ -693,6 +694,7 @@ select:-webkit-autofill:focus {
 
     .input-lrg {
         font-size: 20px;
+        width: 251.96px;
     }
 
     /* Add Workout Specifics */
@@ -750,8 +752,14 @@ select:-webkit-autofill:focus {
     }
 
     .save-btn {
-        font-size: 22px;
+        font-size: 18px;
         font-weight: 600;
+        padding: 8px 20px;
+    }
+
+    /* Single Workout Specifics */
+    .save-icon {
+        font-size: 18px;
     }
 }
 
