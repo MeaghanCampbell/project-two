@@ -417,16 +417,16 @@ h3 {
 }
 
 .delete-banner {
-    max-height: 35px;
     background: linear-gradient(#c67171,#a32323);
-    font-size: 12px;
+    font-size: 15px;
     color: white;
     border: none;
-    padding: 5px;
+    padding: 10px;
     font-family: 'Montserrat', sans-serif;
-    width: 50%;
     text-shadow: 1px 1px 2px #333333;
     outline: none;
+    margin-bottom: 10px;
+    border-radius: 5px;
 }
 
 .delete-banner:hover {
@@ -441,9 +441,10 @@ h3 {
     border: none;
     padding: 5px;
     font-family: 'Montserrat', sans-serif;
-    width: 50%;
+    width: 100%;
     text-shadow: 1px 1px 2px #333333;
     outline: none;
+    text-align: center;
 }
 
 .update-banner:hover {
@@ -692,6 +693,7 @@ select:-webkit-autofill:focus {
         font-size: 18px;
         font-weight: 500;
         text-align: center;
+
     }
 
     /* Add/Update Benchmark Specifics */
