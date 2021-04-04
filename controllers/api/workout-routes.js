@@ -6,35 +6,35 @@ const sequelize = require('../../config/connection');
 router.get('/', (req, res) => {
     Workout.findAll({
         attributes: [
-          'id',
-          'date',
-          'category',
-          'time',
-          'level',
-          'description',
-          [sequelize.literal('(SELECT COUNT(*) FROM kudos WHERE workout.id = kudos.workout_id)'), 'kudos_count']
+            'id',
+            'date',
+            'category',
+            'time',
+            'level',
+            'description',
+            [sequelize.literal('(SELECT COUNT(*) FROM kudos WHERE workout.id = kudos.workout_id)'), 'kudos_count']
         ],
-        order: [['date', 'DESC']], 
+        order: [['date', 'DESC']],
         include: [
-          {
-              model: User,
-              attributes: ['username'],
-              include: {
-                  model: Benchmark,
-                  attributes: ['route_grade', 'boulder_grade']
-              }
-          },
-          {
+            {
+                model: User,
+                attributes: ['username'],
+                include: {
+                    model: Benchmark,
+                    attributes: ['route_grade', 'boulder_grade']
+                }
+            },
+            {
                 model: User,
                 attributes: ['username']
-          }
+            }
         ]
     })
-    .then(dbWorkoutData => res.json(dbWorkoutData))
-    .catch(err => {
-        console.log(err)
-        res.status(500).json(err)
-    })
+        .then(dbWorkoutData => res.json(dbWorkoutData))
+        .catch(err => {
+            console.log(err)
+            res.status(500).json(err)
+        })
 });
 
 
@@ -60,17 +60,17 @@ router.get('/:id', (req, res) => {
             }
         ]
     })
-    .then(dbWorkoutData => {
-        if (!dbWorkoutData) {
-            res.status(404).json({ message: 'No workout found with this id' });
-            return;
-        }
-        res.json(dbWorkoutData);
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+        .then(dbWorkoutData => {
+            if (!dbWorkoutData) {
+                res.status(404).json({ message: 'No workout found with this id' });
+                return;
+            }
+            res.json(dbWorkoutData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 })
 
 
@@ -84,11 +84,11 @@ router.post('/', (req, res) => {
         description: req.body.description,
         user_id: req.session.user_id
     })
-    .then(dbWorkoutData => res.json(dbWorkoutData))
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+        .then(dbWorkoutData => res.json(dbWorkoutData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 })
 
 
@@ -97,30 +97,30 @@ router.put('/kudos', (req, res) => {
     Kudos.create({
         user_id: req.body.user_id,
         workout_id: req.body.workout_id
-      }).then(() => {
+    }).then(() => {
         // then find the post we just voted on
         return Workout.findOne({
-          where: {
-            id: req.body.workout_id
-          },
-          attributes: [
-            'id',
-            'date',
-            'category',
-            'time',
-            'level',
-            'description',
-            [
-                sequelize.literal('(SELECT COUNT(*) FROM kudos WHERE workout.id = kudos.workout_id)'),
-                'kudos_count'
+            where: {
+                id: req.body.workout_id
+            },
+            attributes: [
+                'id',
+                'date',
+                'category',
+                'time',
+                'level',
+                'description',
+                [
+                    sequelize.literal('(SELECT COUNT(*) FROM kudos WHERE workout.id = kudos.workout_id)'),
+                    'kudos_count'
+                ]
             ]
-          ]
         })
-        .then(dbWorkoutData => res.json(dbWorkoutData))
-        .catch(err => {
-          console.log(err);
-          res.status(400).json(err);
-        });
+            .then(dbWorkoutData => res.json(dbWorkoutData))
+            .catch(err => {
+                console.log(err);
+                res.status(400).json(err);
+            });
     })
 })
 
@@ -140,17 +140,17 @@ router.put('/:id', (req, res) => {
             }
         }
     )
-    .then(dbWorkoutData => {
-        if (!dbWorkoutData) {
-            res.status(404).json({ message: 'No workout found with this id' });
-            return;
-        }
-    res.json(dbWorkoutData);
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+        .then(dbWorkoutData => {
+            if (!dbWorkoutData) {
+                res.status(404).json({ message: 'No workout found with this id' });
+                return;
+            }
+            res.json(dbWorkoutData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 })
 
 
@@ -161,17 +161,17 @@ router.delete('/:id', (req, res) => {
             id: req.params.id
         }
     })
-    .then(dbWorkoutData => {
-        if (!dbWorkoutData) {
-          res.status(404).json({ message: 'No workout found with this id' });
-          return;
-        }
-    res.json(dbWorkoutData);
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+        .then(dbWorkoutData => {
+            if (!dbWorkoutData) {
+                res.status(404).json({ message: 'No workout found with this id' });
+                return;
+            }
+            res.json(dbWorkoutData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 })
 
 

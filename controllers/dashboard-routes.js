@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
                 model: User,
                 attributes: ['username'],
                 include: {
-                model: Benchmark,
+                    model: Benchmark,
                     attributes: ['boulder_grade', 'route_grade', 'id']
                 }
             },
@@ -32,19 +32,19 @@ router.get('/', (req, res) => {
             }
         ]
     })
-    .then(dbWorkoutData => {
-        const workouts = dbWorkoutData.map(workout => workout.get({ plain: true }));
-        if (workouts[0]) {
-            const benchmarks = workouts[0].user.benchmark
-            res.render('dashboard', { workouts, benchmarks, loggedIn: true });
-        } else {
-            res.render('dashboard', { loggedIn: true });
-        }
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+        .then(dbWorkoutData => {
+            const workouts = dbWorkoutData.map(workout => workout.get({ plain: true }));
+            if (workouts[0]) {
+                const benchmarks = workouts[0].user.benchmark
+                res.render('dashboard', { workouts, benchmarks, loggedIn: true });
+            } else {
+                res.render('dashboard', { loggedIn: true });
+            }
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
 
@@ -69,21 +69,21 @@ router.get('/updatebenchmark/:id', (req, res) => {
             }
         ]
     })
-    .then(dbBenchmarkData => {
-        if (dbBenchmarkData) {
-          const benchmark = dbBenchmarkData.get({ plain: true });
-          
-          res.render('update-benchmark', {
-            benchmark,
-            loggedIn: true
-          });
-        } else {
-          res.status(404).end();
-        }
-      })
-      .catch(err => {
-        res.status(500).json(err);
-      });
+        .then(dbBenchmarkData => {
+            if (dbBenchmarkData) {
+                const benchmark = dbBenchmarkData.get({ plain: true });
+
+                res.render('update-benchmark', {
+                    benchmark,
+                    loggedIn: true
+                });
+            } else {
+                res.status(404).end();
+            }
+        })
+        .catch(err => {
+            res.status(500).json(err);
+        });
 })
 
 router.get('/updateworkout/:id', (req, res) => {
@@ -99,21 +99,55 @@ router.get('/updateworkout/:id', (req, res) => {
             }
         ]
     })
-    .then(dbWorkoutData => {
-        if (dbWorkoutData) {
-          const workout = dbWorkoutData.get({ plain: true });
-          
-          res.render('update-workout', {
-            workout,
-            loggedIn: true
-          });
-        } else {
-          res.status(404).end();
-        }
-      })
-      .catch(err => {
-        res.status(500).json(err);
-      });
+        .then(dbWorkoutData => {
+            if (dbWorkoutData) {
+                const workout = dbWorkoutData.get({ plain: true });
+
+                res.render('update-workout', {
+                    workout,
+                    loggedIn: true
+                });
+            } else {
+                res.status(404).end();
+            }
+        })
+        .catch(err => {
+            res.status(500).json(err);
+        });
 })
+
+
+
+router.get('/saved-workouts/:id', (req, res) => {
+    Workout.findOne({
+        where: {
+        id: req.params.id
+    },
+        attributes: ['id', 'category', 'time', 'level'],
+        include: [
+        {
+            model: User,
+            attibutes: ['username']
+        }
+    ]
+})
+    .then(dbSaveData => {
+        if (dbSaveData) {
+            const workout = dbSaveData.get({ plain: true });
+
+            res.render('saved-workout', {
+                workout,
+                loggedIn: true
+            });
+        } else {
+            res.status(404).end();
+        }
+    })
+    .catch(err => {
+        res.staus(500).json(err);
+    
+    })    
+    
+    });
 
 module.exports = router
