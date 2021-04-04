@@ -51,7 +51,10 @@ router.get('/', (req, res) => {
 router.get('/add', (req, res) => {
     res.render('add-workout', { loggedIn: true });
 });
-
+//saved-workouts
+router.get('/saved-workouts', (req, res) => {
+res.render('saved-workouts', { loggedIn: true });
+});
 router.get('/addbenchmark', (req, res) => {
     res.render('add-benchmark', { loggedIn: true })
 })
