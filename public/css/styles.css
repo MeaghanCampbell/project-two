@@ -8,7 +8,6 @@ body {
     margin: 0;
     padding: 0;
     background-attachment: fixed;
-    background-repeat: no-repeat;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -590,10 +589,11 @@ select:-webkit-autofill:focus {
         align-items: center;
         justify-content: center;
         background-image: url("../images/rock3.jpg");
+        background-size: cover;
     }
 
     .window {
-        background: rgba(0, 0, 0, 0.4);
+        background: rgba(0, 0, 0, 0.5);
         width: 50vw;
         height: 80vh;
         border-radius: 15px;
@@ -646,10 +646,10 @@ select:-webkit-autofill:focus {
 
     /* Nav */
     nav {
-        padding: 15px 40px;
+        padding: 18px 40px;
     }
     .fa-lg {
-        font-size: 32px;
+        font-size: 35px;
     }
 
     /* Home, Dashboard & Search Display*/
@@ -667,7 +667,8 @@ select:-webkit-autofill:focus {
     }
 
     .section-body:hover {
-        background-color: rgba(74,184,89,0.5) !important;
+        background: none;
+        background-color: rgba(74,184,89,0.5);
     }
 
     h3 {
