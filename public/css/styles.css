@@ -8,7 +8,6 @@ body {
     margin: 0;
     padding: 0;
     background-attachment: fixed;
-    background-repeat: no-repeat;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -303,7 +302,7 @@ a {
 }
 
 .save-banner:hover {
-    background: linear-gradient(#23A349, #97C671);
+    background: linear-gradient(#23A349, #97C671) !important;
 }
 
 .save-btn {
@@ -314,7 +313,7 @@ a {
     outline: none;
 }
 
-.save-icon {
+.save-icon, .fa-trash-alt {
     padding: 1px 7px 0 0;
     font-size: 15px;
 }
@@ -526,7 +525,7 @@ select:-webkit-autofill:focus {
     resize: none;
 }
 
-/* Add Benchmark Specifics */
+/* Add/Update Benchmark Specifics */
 
 .add-benchmark-p {
     text-align: center;
@@ -572,7 +571,7 @@ select:-webkit-autofill:focus {
 }
 
 .benchmark-btn:hover {
-    background: linear-gradient(#97C671, #23A349);
+    background: linear-gradient(#97C671, #23A349) !important;
 }
 
 /* Media Queries */
@@ -586,7 +585,6 @@ select:-webkit-autofill:focus {
         min-width: 100%;
         min-height: 100%;
         margin: 0;
-        min-height: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -596,7 +594,7 @@ select:-webkit-autofill:focus {
     }
 
     .window {
-        background: rgba(0, 0, 0, 0.4);
+        background: rgba(0, 0, 0, 0.5);
         width: 50vw;
         height: 80vh;
         border-radius: 15px;
@@ -689,11 +687,15 @@ select:-webkit-autofill:focus {
     }
 
     .update-banner, .delete-banner {
-        padding-top: 10px 0 10px;
+        padding: 10px 0 10px;
         font-size: 18px;
         font-weight: 500;
         text-align: center;
+    }
 
+    .delete-banner {
+        margin-bottom: 20px;
+        width: 302.98px;
     }
 
     /* Add/Update Benchmark Specifics */
@@ -746,8 +748,7 @@ select:-webkit-autofill:focus {
 
     .lrg-header-content {
         padding-top: 6px;
-    }
-
+    }ƒ
     .workout-lrg-screen {
         font-size: 22px;
     }
@@ -760,14 +761,19 @@ select:-webkit-autofill:focus {
         height: 50px;
     }
 
-    .save-btn {
+    .save-btn, .delete-banner {
         font-size: 18px;
         font-weight: 600;
         padding: 8px 20px;
     }
 
+    .save-btn:hover {
+        background: linear-gradient(#23A349, #97C671) !important;
+
+    }
+
     /* Single Workout Specifics */
-    .save-icon {
+    .save-icon, .fa-trash-alt {
         font-size: 18px;
     }
 }
@@ -781,10 +787,6 @@ select:-webkit-autofill:focus {
 @media all and (max-width: 769px) { 
     body {
         background: radial-gradient(#333333, #000000);
-    }
-
-    .login-main, .signup-main {
-        padding-top: 105px;
     }
 }
 
