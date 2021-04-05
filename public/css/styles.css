@@ -675,27 +675,32 @@ select:-webkit-autofill:focus {
         font-size: 30px;
     }
 
+    .update-banner {
+        font-size: 18px;
+    }
+
     /* Dashboard Specifics */
         .dashboard-btn {
         font-size: 17px !important;
         margin: 0 5px !important;
     }
+
     .benchmark-circle {
         width: 120px;
         height: 120px;
         font-size: 30px;
     }
 
-    .update-banner, .delete-banner {
+    .save-btn, .delete-banner {
         padding: 10px 0 10px;
         font-size: 18px;
         font-weight: 500;
         text-align: center;
+        width: 245px;
     }
 
     .delete-banner {
         margin-bottom: 20px;
-        width: 302.98px;
     }
 
     /* Add/Update Benchmark Specifics */
@@ -706,6 +711,10 @@ select:-webkit-autofill:focus {
     .input-lrg {
         font-size: 20px;
         width: 251.96px;
+    }
+
+    .benchmark-btn {
+        width: auto;
     }
 
     /* Add Workout Specifics */
@@ -731,6 +740,8 @@ select:-webkit-autofill:focus {
         width: 336px;
     }
 
+    
+
     /* Search Specifics */
     .search-input {
         font-size: 20px;
@@ -748,7 +759,8 @@ select:-webkit-autofill:focus {
 
     .lrg-header-content {
         padding-top: 6px;
-    }ƒ
+    }
+
     .workout-lrg-screen {
         font-size: 22px;
     }
@@ -769,7 +781,6 @@ select:-webkit-autofill:focus {
 
     .save-btn:hover {
         background: linear-gradient(#23A349, #97C671) !important;
-
     }
 
     /* Single Workout Specifics */
@@ -787,6 +798,11 @@ select:-webkit-autofill:focus {
 @media all and (max-width: 769px) { 
     body {
         background: radial-gradient(#333333, #000000);
+    }
+
+    .section-body:hover {
+        background: linear-gradient(#97C671,#23A349);
+        text-shadow: 3px, 3px #000000;
     }
 }
 
