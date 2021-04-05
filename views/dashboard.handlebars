@@ -1,14 +1,14 @@
 
 <div class="dashboard-btns">
-    <a href="/dashboard/add">Add Workout</a>
+    <a href="/dashboard/add" class="dashboard-btn">Add Workout</a>
     {{#if workouts}}
     {{#if benchmarks}}
-    <a href="/dashboard/updatebenchmark">Update Benchmark</a>
+    <a href="/dashboard/updatebenchmark/{{benchmarks.id}}" class="dashboard-btn" value={{benchmarks.id}}>Update Benchmark</a>
     {{else}}
-    <a href="/dashboard/addbenchmark">Add Benchmark</a>
+    <a href="/dashboard/addbenchmark" class="dashboard-btn">Add Benchmark</a>
     {{/if}}
     {{/if}}
-    <a>Saved Workouts</a>
+    {{!-- <a class="dashboard-btn">Saved Workouts</a> --}}
 </div>
 
   <main>
@@ -33,10 +33,8 @@
         </div>
       </a>
       <div class="banner-btns">
-        <button id="update-workout" type="click" class="update-banner">Update Workout</button>
-        <button id="delete-workout" type="click" class="delete-banner">Delete Workout</button>
+        <a href="/dashboard/updateworkout/{{workout.id}}" id="update-workout" type="click" class="update-banner">Update Workout</a>
       </div>
     </section>
     {{/each}}
   </main>
-  <script src="/js/delete-workout.js"></script>

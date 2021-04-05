@@ -23,7 +23,7 @@ router.get('/', (req, res) => {
                 attributes: ['username'],
                 include: {
                 model: Benchmark,
-                    attributes: ['boulder_grade', 'route_grade']
+                    attributes: ['boulder_grade', 'route_grade', 'id']
                 }
             },
             {
@@ -56,9 +56,64 @@ router.get('/addbenchmark', (req, res) => {
     res.render('add-benchmark', { loggedIn: true })
 })
 
-router.get('/updatebenchmark', (req, res) => {
-    res.render('update-benchmark', { loggedIn: true })
+router.get('/updatebenchmark/:id', (req, res) => {
+    Benchmark.findOne({
+        where: {
+            id: req.params.id
+        },
+        attributes: ['id', 'boulder_grade', 'route_grade'],
+        include: [
+            {
+                model: User,
+                attributes: ['username']
+            }
+        ]
+    })
+    .then(dbBenchmarkData => {
+        if (dbBenchmarkData) {
+          const benchmark = dbBenchmarkData.get({ plain: true });
+          
+          res.render('update-benchmark', {
+            benchmark,
+            loggedIn: true
+          });
+        } else {
+          res.status(404).end();
+        }
+      })
+      .catch(err => {
+        res.status(500).json(err);
+      });
 })
 
+router.get('/updateworkout/:id', (req, res) => {
+    Workout.findOne({
+        where: {
+            id: req.params.id
+        },
+        attributes: ['id', 'date', 'category', 'time', 'level', 'description'],
+        include: [
+            {
+                model: User,
+                attributes: ['username']
+            }
+        ]
+    })
+    .then(dbWorkoutData => {
+        if (dbWorkoutData) {
+          const workout = dbWorkoutData.get({ plain: true });
+          
+          res.render('update-workout', {
+            workout,
+            loggedIn: true
+          });
+        } else {
+          res.status(404).end();
+        }
+      })
+      .catch(err => {
+        res.status(500).json(err);
+      });
+})
 
 module.exports = router

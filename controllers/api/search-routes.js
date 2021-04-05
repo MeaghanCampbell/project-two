@@ -22,6 +22,12 @@ router.get('/:username', (req, res) => {
                 'level',
                 'description',
                 [sequelize.literal('(SELECT COUNT(*) FROM kudos WHERE workout.id = kudos.workout_id)'), 'kudos_count']
+            ],
+            include: [
+                {
+                    model: User,
+                    attributes: ['username']
+                }
             ]
         })
     })
